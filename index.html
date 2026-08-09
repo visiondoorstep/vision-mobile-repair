@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VISION - Doorstep Mobile Repair</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #155eef;
+    }
+
+    .book-btn {
+      background: #155eef;
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 65px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: #155eef;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      color: #5c667a;
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 5px;
+    }
+
+    .primary-btn {
+      background: #155eef;
+      color: white;
+    }
+
+    .secondary-btn {
+      background: white;
+      color: #155eef;
+      border: 1px solid #155eef;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .service {
+      background: white;
+      padding: 22px 12px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .service .icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .service h3 {
+      font-size: 15px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .step-number {
+      color: #155eef;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .why {
+      background: #172033;
+      color: white;
+      max-width: none;
+      text-align: center;
+    }
+
+    .why-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .feature {
+      padding: 18px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+    }
+
+    .track {
+      background: white;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+      padding: 35px 20px;
+    }
+
+    .track input {
+      width: 100%;
+      max-width: 400px;
+      padding: 13px;
+      border: 1px solid #ccd3df;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-size: 16px;
+    }
+
+    .track button {
+      padding: 13px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #155eef;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0e1525;
+      color: #cbd3e1;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer h2 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      header {
+        padding: 14px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">VISION</div>
+    <a href="#book" class="book-btn">Book Repair</a>
+  </header>
+
+  <section class="hero">
+    <h1>Mobile Repair<br><span>At Your Doorstep</span></h1>
+
+    <p>
+      Fast, reliable and professional mobile repair service at your
+      home or office.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#book" class="primary-btn">🔧 Book a Repair</a>
+      <a href="#track" class="secondary-btn">📍 Track Repair</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">What's wrong with your phone?</h2>
+
+    <div class="services">
+
+      <div class="service">
+        <div class="icon">📱</div>
+        <h3>Screen Broken</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">🔋</div>
+        <h3>Battery Problem</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">🔌</div>
+        <h3>Charging Issue</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">🔊</div>
+        <h3>Speaker Problem</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">📷</div>
+        <h3>Camera Problem</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">💧</div>
+        <h3>Water Damage</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">⚡</div>
+        <h3>Phone Dead</h3>
+      </div>
+
+      <div class="service">
+        <div class="icon">🛠️</div>
+        <h3>Other Repair</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">How VISION Works</h2>
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01 — BOOK</div>
+        <h3>Book Your Repair</h3>
+        <p>Select your phone and repair problem.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02 — ASSIGN</div>
+        <h3>Technician Assigned</h3>
+        <p>We assign a technician to your booking.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03 — VISIT</div>
+        <h3>Doorstep Visit</h3>
+        <p>Our technician reaches your location.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04 — REPAIR</div>
+        <h3>Get Repaired</h3>
+        <p>Your phone gets repaired at your doorstep.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="why-content">
+
+      <h2 class="section-title">Why Choose VISION?</h2>
+
+      <div class="features">
+        <div class="feature">✓ Verified Technicians</div>
+        <div class="feature">✓ Quality Repairs</div>
+        <div class="feature">✓ Doorstep Service</div>
+        <div class="feature">✓ Service Warranty</div>
+        <div class="feature">✓ Secure Payments</div>
+        <div class="feature">✓ Repair Tracking</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="track">
+    <div class="track">
+
+      <h2>Track Your Repair</h2>
+
+      <p>Enter your VISION Booking ID</p>
+
+      <input type="text" placeholder="Example: VIS-10245">
+
+      <br>
+
+      <button onclick="trackRepair()">Track Now</button>
+
+      <p id="trackResult"></p>
+
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="track">
+
+      <h2>Ready to Repair?</h2>
+
+      <p>Book a mobile repair technician at your doorstep.</p>
+
+      <br>
+
+      <a href="tel:+919999999999" class="primary-btn">
+        📞 Call to Book
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <h2>VISION</h2>
+    <p>Doorstep Mobile Repair Service</p>
+    <br>
+    <p>© 2026 VISION. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function trackRepair() {
+      const result = document.getElementById("trackResult");
+      result.innerText =
+        "Tracking system will be connected in the next version.";
+      result.style.marginTop = "15px";
+    }
+  </script>
+
+</body>
+  </html>
