@@ -1,25 +1,9 @@
-Skip to content
-vision-mobile-repair
-Repository navigation
-Code
-Issues
-Pull requests
-Actions
-vision-mobile-repair
-/index.html
-visiondoorstep
-visiondoorstep
-1 hour ago
-546 lines (443 loc) · 12 KB
-
-Code
-
-Blame
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>VISION - Doorstep Mobile Repair</title>
 
   <style>
@@ -31,21 +15,21 @@ Blame
 
     body {
       font-family: Arial, sans-serif;
-      background: #f7f9fc;
+      background: #f6f8fc;
       color: #172033;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     header {
-      background: white;
-      padding: 16px 20px;
+      background: #fff;
+      padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.08);
     }
 
     .logo {
@@ -54,25 +38,25 @@ Blame
       color: #155eef;
     }
 
-    .book-btn {
+    .header-btn {
       background: #155eef;
       color: white;
-      text-decoration: none;
-      padding: 10px 16px;
+      padding: 10px 15px;
       border-radius: 8px;
-      font-weight: 600;
+      text-decoration: none;
+      font-weight: 700;
     }
 
     .hero {
-      padding: 65px 20px;
+      padding: 60px 20px;
       text-align: center;
-      background: linear-gradient(135deg, #eaf2ff, #ffffff);
+      background: linear-gradient(135deg,#eaf2ff,#fff);
     }
 
     .hero h1 {
       font-size: 40px;
       line-height: 1.15;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
 
     .hero h1 span {
@@ -80,64 +64,50 @@ Blame
     }
 
     .hero p {
+      color: #5c667a;
       max-width: 600px;
       margin: auto;
-      color: #5c667a;
       font-size: 17px;
     }
 
-    .hero-buttons {
-      margin-top: 28px;
-    }
-
-    .primary-btn,
-    .secondary-btn {
+    .hero-btn {
       display: inline-block;
-      padding: 13px 20px;
+      margin-top: 25px;
+      background: #155eef;
+      color: white;
+      padding: 14px 22px;
       border-radius: 9px;
       text-decoration: none;
       font-weight: 700;
-      margin: 5px;
-    }
-
-    .primary-btn {
-      background: #155eef;
-      color: white;
-    }
-
-    .secondary-btn {
-      background: white;
-      color: #155eef;
-      border: 1px solid #155eef;
     }
 
     section {
-      padding: 50px 20px;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
+      padding: 45px 20px;
     }
 
     .section-title {
       text-align: center;
       font-size: 28px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
       gap: 15px;
     }
 
     .service {
       background: white;
-      padding: 22px 12px;
+      padding: 22px 10px;
       text-align: center;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 15px rgba(0,0,0,.06);
     }
 
-    .service .icon {
+    .service-icon {
       font-size: 30px;
       margin-bottom: 8px;
     }
@@ -146,106 +116,203 @@ Blame
       font-size: 15px;
     }
 
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .step {
+    .booking-box {
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    }
-
-    .step-number {
-      color: #155eef;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-
-    .why {
-      background: #172033;
-      color: white;
-      max-width: none;
-      text-align: center;
-    }
-
-    .why-content {
-      max-width: 1100px;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.08);
+      max-width: 650px;
       margin: auto;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
+    .progress {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      gap: 5px;
     }
 
-    .feature {
-      padding: 18px;
-      background: rgba(255,255,255,0.08);
+    .progress div {
+      flex: 1;
+      height: 5px;
+      background: #dce2ec;
       border-radius: 10px;
     }
 
-    .track {
-      background: white;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-      padding: 35px 20px;
+    .progress .active {
+      background: #155eef;
     }
 
-    .track input,
-    .track select,
-    .track textarea {
+    .step {
+      display: none;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    .step h2 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: #667085;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-top: 15px;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
       width: 100%;
-      max-width: 500px;
       padding: 13px;
       border: 1px solid #ccd3df;
       border-radius: 8px;
-      margin: 8px 0;
       font-size: 16px;
-      font-family: Arial, sans-serif;
+      font-family: Arial,sans-serif;
+      outline: none;
     }
 
-    .track textarea {
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #155eef;
+    }
+
+    textarea {
       min-height: 100px;
       resize: vertical;
     }
 
-    .track button {
-      padding: 13px 22px;
-      border: none;
+    .location-btn {
+      margin-top: 10px;
+      background: #eef4ff;
+      color: #155eef;
+      border: 1px solid #155eef;
+      padding: 11px 15px;
       border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      flex: 1;
+      border: none;
+      padding: 14px;
+      border-radius: 9px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .next {
       background: #155eef;
       color: white;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 16px;
-      margin-top: 10px;
     }
 
-    .booking-form {
-      max-width: 600px;
-      margin: 20px auto 0;
-      text-align: left;
+    .back {
+      background: #eef1f6;
+      color: #172033;
     }
 
-    .booking-form label {
+    .confirm {
+      background: #16a34a;
+      color: white;
+    }
+
+    .summary {
+      background: #f7f9fc;
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row strong {
+      color: #172033;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 25px 10px;
+    }
+
+    .success.active {
       display: block;
+    }
+
+    .success-icon {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .booking-id {
+      background: #eaf2ff;
+      color: #155eef;
+      font-size: 25px;
+      font-weight: 800;
+      padding: 14px;
+      border-radius: 10px;
+      margin: 20px 0;
+      letter-spacing: 1px;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 9px;
+      font-weight: 700;
       margin-top: 10px;
+    }
+
+    .error {
+      color: #dc2626;
+      margin-top: 12px;
       font-weight: 600;
     }
 
-    .whatsapp-note {
-      margin-top: 15px;
-      color: #5c667a;
-      font-size: 14px;
-      text-align: center;
+    .how {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 15px;
+    }
+
+    .how-card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.06);
+    }
+
+    .how-card span {
+      color: #155eef;
+      font-weight: 800;
     }
 
     footer {
@@ -260,17 +327,18 @@ Blame
       margin-bottom: 8px;
     }
 
-    @media (max-width: 600px) {
+    @media(max-width:600px) {
       .hero h1 {
         font-size: 32px;
       }
 
-      header {
-        padding: 14px 16px;
+      .booking-box {
+        padding: 22px 16px;
       }
 
-      section {
-        padding: 40px 16px;
+      .summary-row {
+        flex-direction: column;
+        gap: 2px;
       }
     }
   </style>
@@ -278,286 +346,120 @@ Blame
 
 <body>
 
-  <header>
-    <div class="logo">VISION</div>
-    <a href="#book" class="book-btn">Book Repair</a>
-  </header>
+<header>
+  <div class="logo">VISION</div>
+  <a href="#book" class="header-btn">Book Repair</a>
+</header>
 
-  <section class="hero">
-    <h1>Mobile Repair<br><span>At Your Doorstep</span></h1>
+<section class="hero">
+  <h1>Mobile Repair<br><span>At Your Doorstep</span></h1>
 
-    <p>
-      Fast, reliable and professional mobile repair service at your
-      home or office.
-    </p>
+  <p>
+    Fast, reliable and professional mobile repair service at your
+    home or office.
+  </p>
 
-    <div class="hero-buttons">
-      <a href="#book" class="primary-btn">🔧 Book a Repair</a>
-      <a href="#track" class="secondary-btn">📍 Track Repair</a>
+  <a href="#book" class="hero-btn">🔧 Book a Repair</a>
+</section>
+
+<section>
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="services">
+
+    <div class="service">
+      <div class="service-icon">📱</div>
+      <h3>Screen Repair</h3>
     </div>
-  </section>
 
-  <section>
-    <h2 class="section-title">What's wrong with your phone?</h2>
-
-    <div class="services">
-
-      <div class="service">
-        <div class="icon">📱</div>
-        <h3>Screen Broken</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">🔋</div>
-        <h3>Battery Problem</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">🔌</div>
-        <h3>Charging Issue</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">🔊</div>
-        <h3>Speaker Problem</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">📷</div>
-        <h3>Camera Problem</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">💧</div>
-        <h3>Water Damage</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">⚡</div>
-        <h3>Phone Dead</h3>
-      </div>
-
-      <div class="service">
-        <div class="icon">🛠️</div>
-        <h3>Other Repair</h3>
-      </div>
-
+    <div class="service">
+      <div class="service-icon">🔋</div>
+      <h3>Battery</h3>
     </div>
-  </section>
 
-  <section>
-    <h2 class="section-title">How VISION Works</h2>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="step-number">01 — BOOK</div>
-        <h3>Book Your Repair</h3>
-        <p>Select your phone and repair problem.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">02 — ASSIGN</div>
-        <h3>Technician Assigned</h3>
-        <p>We assign a technician to your booking.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">03 — VISIT</div>
-        <h3>Doorstep Visit</h3>
-        <p>Our technician reaches your location.</p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">04 — REPAIR</div>
-        <h3>Get Repaired</h3>
-        <p>Your phone gets repaired at your doorstep.</p>
-      </div>
-
+    <div class="service">
+      <div class="service-icon">🔌</div>
+      <h3>Charging</h3>
     </div>
-  </section>
 
-  <section class="why">
-    <div class="why-content">
+    <div class="service">
+      <div class="service-icon">🔊</div>
+      <h3>Speaker</h3>
+    </div>
 
-      <h2 class="section-title">Why Choose VISION?</h2>
+    <div class="service">
+      <div class="service-icon">📷</div>
+      <h3>Camera</h3>
+    </div>
 
-      <div class="features">
-        <div class="feature">✓ Verified Technicians</div>
-        <div class="feature">✓ Quality Repairs</div>
-        <div class="feature">✓ Doorstep Service</div>
-        <div class="feature">✓ Service Warranty</div>
-        <div class="feature">✓ Secure Payments</div>
-        <div class="feature">✓ Repair Tracking</div>
+    <div class="service">
+      <div class="service-icon">💧</div>
+      <h3>Water Damage</h3>
+    </div>
+
+    <div class="service">
+      <div class="service-icon">⚡</div>
+      <h3>Phone Dead</h3>
+    </div>
+
+    <div class="service">
+      <div class="service-icon">🛠️</div>
+      <h3>Other Repair</h3>
+    </div>
+
+  </div>
+</section>
+
+<section id="book">
+
+  <h2 class="section-title">Book Your Repair</h2>
+
+  <div class="booking-box">
+
+    <div class="progress">
+      <div class="active" id="p1"></div>
+      <div id="p2"></div>
+      <div id="p3"></div>
+      <div id="p4"></div>
+      <div id="p5"></div>
+    </div>
+
+    <!-- STEP 1 -->
+
+    <div class="step active" id="step1">
+
+      <h2>01. Customer Details</h2>
+
+      <p>Tell us how we can contact you.</p>
+
+      <label>Your Name</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+      >
+
+      <label>Mobile Number</label>
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="10 digit mobile number"
+        maxlength="10"
+        inputmode="numeric"
+      >
+
+      <div class="buttons">
+        <button class="btn next" onclick="nextStep(1)">
+          Continue →
+        </button>
       </div>
 
     </div>
-  </section>
 
-  <section id="track">
-    <div class="track">
+    <!-- STEP 2 -->
 
-      <h2>Track Your Repair</h2>
+    <div class="step" id="step2">
 
-      <p>Enter your VISION Booking ID</p>
+      <h2>02. Service Selection</h2>
 
-      <input type="text" id="bookingId" placeholder="Example: VIS-10245">
-
-      <br>
-
-      <button onclick="trackRepair()">Track Now</button>
-
-      <p id="trackResult"></p>
-
-    </div>
-  </section>
-
-  <section id="book">
-    <div class="track">
-
-      <h2>Book a Repair</h2>
-
-      <p>Fill your details and request a doorstep technician.</p>
-
-      <form class="booking-form" onsubmit="sendBooking(event)">
-
-        <label for="name">Your Name</label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Enter your name"
-          required
-        >
-
-        <label for="phone">Mobile Number</label>
-        <input
-          type="tel"
-          id="phone"
-          placeholder="Enter mobile number"
-          pattern="[0-9]{10}"
-          maxlength="10"
-          required
-        >
-
-        <label for="brand">Phone Brand</label>
-        <select id="brand" required>
-          <option value="">Select brand</option>
-          <option>Apple iPhone</option>
-          <option>Samsung</option>
-          <option>OnePlus</option>
-          <option>Vivo</option>
-          <option>Oppo</option>
-          <option>Realme</option>
-          <option>Redmi / Xiaomi</option>
-          <option>Motorola</option>
-          <option>Nothing</option>
-          <option>Other</option>
-        </select>
-
-        <label for="model">Phone Model</label>
-        <input
-          type="text"
-          id="model"
-          placeholder="Example: iPhone 13 / OnePlus 12"
-          required
-        >
-
-        <label for="problem">Repair Problem</label>
-        <select id="problem" required>
-          <option value="">Select problem</option>
-          <option>Screen Broken</option>
-          <option>Battery Problem</option>
-          <option>Charging Issue</option>
-          <option>Speaker Problem</option>
-          <option>Camera Problem</option>
-          <option>Water Damage</option>
-          <option>Phone Dead</option>
-          <option>Other Repair</option>
-        </select>
-
-        <label for="address">Service Address</label>
-        <textarea
-          id="address"
-          placeholder="Enter your complete address"
-          required
-        ></textarea>
-
-        <label for="time">Preferred Time</label>
-        <select id="time" required>
-          <option value="">Select preferred time</option>
-          <option>9 AM - 12 PM</option>
-          <option>12 PM - 3 PM</option>
-          <option>3 PM - 6 PM</option>
-          <option>6 PM - 9 PM</option>
-        </select>
-
-        <button type="submit">📲 Book Service on WhatsApp</button>
-
-        <p class="whatsapp-note">
-          Your booking details will be sent to VISION WhatsApp.
-        </p>
-
-      </form>
-
-    </div>
-  </section>
-
-  <footer>
-    <h2>VISION</h2>
-    <p>Doorstep Mobile Repair Service</p>
-    <br>
-    <p>© 2026 VISION. All rights reserved.</p>
-  </footer>
-
-  <script>
-
-    function trackRepair() {
-      const bookingId = document.getElementById("bookingId").value.trim();
-      const result = document.getElementById("trackResult");
-
-      if (!bookingId) {
-        result.innerText = "Please enter your Booking ID.";
-        result.style.marginTop = "15px";
-        return;
-      }
-
-      result.innerText =
-        "Tracking system will be connected in the next version.";
-
-      result.style.marginTop = "15px";
-    }
-
-    function sendBooking(event) {
-
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const brand = document.getElementById("brand").value;
-      const model = document.getElementById("model").value;
-      const problem = document.getElementById("problem").value;
-      const address = document.getElementById("address").value;
-      const time = document.getElementById("time").value;
-
-      const whatsappNumber = "916309877224";
-
-      const message =
-        "🔧 *VISION MOBILE REPAIR BOOKING*%0A%0A" +
-        "👤 Name: " + encodeURIComponent(name) + "%0A" +
-        "📞 Mobile: " + encodeURIComponent(phone) + "%0A" +
-        "📱 Brand: " + encodeURIComponent(brand) + "%0A" +
-        "📲 Model: " + encodeURIComponent(model) + "%0A" +
-        "🛠️ Problem: " + encodeURIComponent(problem) + "%0A" +
-        "📍 Address: " + encodeURIComponent(address) + "%0A" +
-        "⏰ Preferred Time: " + encodeURIComponent(time);
-
-      const whatsappURL =
-        "https://wa.me/" + whatsappNumber + "?text=" + message;
-
-      window.open(whatsappURL, "_blank");
-    }
-
-  </script>
-
-</body>
-      </html>
+      <p>Select your phone
