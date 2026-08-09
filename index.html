@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>VISION - Doorstep Mobile Repair</title>
 
   <style>
@@ -38,13 +37,15 @@
       color: #155eef;
     }
 
-    .header-btn {
+    .header-btn,
+    .hero-btn {
       background: #155eef;
       color: white;
-      padding: 10px 15px;
+      padding: 11px 16px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
+      display: inline-block;
     }
 
     .hero {
@@ -71,14 +72,8 @@
     }
 
     .hero-btn {
-      display: inline-block;
       margin-top: 25px;
-      background: #155eef;
-      color: white;
       padding: 14px 22px;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: 700;
     }
 
     section {
@@ -128,8 +123,8 @@
     .progress {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 30px;
       gap: 5px;
+      margin-bottom: 30px;
     }
 
     .progress div {
@@ -201,6 +196,12 @@
       cursor: pointer;
     }
 
+    .location-status {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #16a34a;
+    }
+
     .buttons {
       display: flex;
       gap: 10px;
@@ -242,16 +243,12 @@
       display: flex;
       justify-content: space-between;
       gap: 15px;
-      padding: 8px 0;
+      padding: 9px 0;
       border-bottom: 1px solid #e5e7eb;
     }
 
     .summary-row:last-child {
       border-bottom: none;
-    }
-
-    .summary-row strong {
-      color: #172033;
     }
 
     .success {
@@ -291,9 +288,29 @@
       margin-top: 10px;
     }
 
-    .error {
-      color: #dc2626;
+    .track-box {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+      max-width: 650px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .track-box button {
       margin-top: 12px;
+      background: #155eef;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #trackResult {
+      margin-top: 15px;
       font-weight: 600;
     }
 
@@ -429,15 +446,10 @@
     <div class="step active" id="step1">
 
       <h2>01. Customer Details</h2>
-
       <p>Tell us how we can contact you.</p>
 
       <label>Your Name</label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Enter your name"
-      >
+      <input type="text" id="name" placeholder="Enter your name">
 
       <label>Mobile Number</label>
       <input
@@ -461,5 +473,581 @@
     <div class="step" id="step2">
 
       <h2>02. Service Selection</h2>
+      <p>Select your phone and repair service.</p>
 
-      <p>Select your phone
+      <label>Phone Brand</label>
+
+      <select id="brand">
+        <option value="">Select brand</option>
+        <option>Apple iPhone</option>
+        <option>Samsung</option>
+        <option>OnePlus</option>
+        <option>Vivo</option>
+        <option>Oppo</option>
+        <option>Realme</option>
+        <option>Redmi / Xiaomi</option>
+        <option>Motorola</option>
+        <option>Nothing</option>
+        <option>Other</option>
+      </select>
+
+      <label>Phone Model</label>
+
+      <input
+        type="text"
+        id="model"
+        placeholder="Example: iPhone 13"
+      >
+
+      <label>Repair Service</label>
+
+      <select id="service">
+        <option value="">Select service</option>
+        <option>Screen Repair</option>
+        <option>Battery Replacement</option>
+        <option>Charging Issue</option>
+        <option>Speaker Repair</option>
+        <option>Camera Repair</option>
+        <option>Water Damage</option>
+        <option>Phone Dead</option>
+        <option>Other Repair</option>
+      </select>
+
+      <div class="buttons">
+        <button class="btn back" onclick="previousStep(2)">
+          ← Back
+        </button>
+
+        <button class="btn next" onclick="nextStep(2)">
+          Continue →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- STEP 3 -->
+
+    <div class="step" id="step3">
+
+      <h2>03. Address & Location</h2>
+      <p>Where should our technician visit?</p>
+
+      <label>Complete Address</label>
+
+      <textarea
+        id="address"
+        placeholder="House / Flat, Street, Area, City"
+      ></textarea>
+
+      <button class="location-btn" onclick="getLocation()">
+        📍 Use My Current Location
+      </button>
+
+      <div id="locationStatus" class="location-status"></div>
+
+      <input type="hidden" id="location">
+
+      <div class="buttons">
+        <button class="btn back" onclick="previousStep(3)">
+          ← Back
+        </button>
+
+        <button class="btn next" onclick="nextStep(3)">
+          Continue →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- STEP 4 -->
+
+    <div class="step" id="step4">
+
+      <h2>04. Date & Time</h2>
+      <p>Select your preferred doorstep visit.</p>
+
+      <label>Preferred Date</label>
+
+      <input
+        type="date"
+        id="bookingDate"
+      >
+
+      <label>Preferred Time</label>
+
+      <select id="timeSlot">
+        <option value="">Select time slot</option>
+        <option>9 AM - 12 PM</option>
+        <option>12 PM - 3 PM</option>
+        <option>3 PM - 6 PM</option>
+        <option>6 PM - 9 PM</option>
+      </select>
+
+      <div class="buttons">
+        <button class="btn back" onclick="previousStep(4)">
+          ← Back
+        </button>
+
+        <button class="btn next" onclick="nextStep(4)">
+          Review Booking →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- STEP 5 -->
+
+    <div class="step" id="step5">
+
+      <h2>05. Confirm Booking</h2>
+      <p>Please check your details before confirming.</p>
+
+      <div class="summary">
+
+        <div class="summary-row">
+          <strong>Name</strong>
+          <span id="summaryName"></span>
+        </div>
+
+        <div class="summary-row">
+          <strong>Mobile</strong>
+          <span id="summaryMobile"></span>
+        </div>
+
+        <div class="summary-row">
+          <strong>Phone</strong>
+          <span id="summaryPhone"></span>
+        </div>
+
+        <div class="summary-row">
+          <strong>Service</strong>
+          <span id="summaryService"></span>
+        </div>
+
+        <div class="summary-row">
+          <strong>Address</strong>
+          <span id="summaryAddress"></span>
+        </div>
+
+        <div class="summary-row">
+          <strong>Date</strong>
+          <span id="summaryDate"></span>
+        </div>
+
+        <div class="summary-row">
+          <strong>Time</strong>
+          <span id="summaryTime"></span>
+        </div>
+
+      </div>
+
+      <p id="bookingError" class="error"></p>
+
+      <div class="buttons">
+
+        <button class="btn back" onclick="previousStep(5)">
+          ← Back
+        </button>
+
+        <button
+          class="btn confirm"
+          id="confirmButton"
+          onclick="confirmBooking()"
+        >
+          ✓ Confirm Booking
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- SUCCESS -->
+
+    <div class="success" id="success">
+
+      <div class="success-icon">✅</div>
+
+      <h2>Booking Confirmed!</h2>
+
+      <p>Your VISION doorstep repair request has been received.</p>
+
+      <div class="booking-id" id="generatedBookingId">
+        VIS-00000
+      </div>
+
+      <p>
+        Please save your Booking ID for tracking your repair.
+      </p>
+
+      <a
+        href="#"
+        id="whatsappLink"
+        class="whatsapp-btn"
+        target="_blank"
+      >
+        📲 Send Booking to WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TRACKING -->
+
+<section id="track">
+
+  <h2 class="section-title">Track Your Repair</h2>
+
+  <div class="track-box">
+
+    <p>Enter your VISION Booking ID</p>
+
+    <br>
+
+    <input
+      type="text"
+      id="trackBookingId"
+      placeholder="Example: VIS-12345"
+    >
+
+    <button onclick="trackBooking()">
+      🔎 Track Booking
+    </button>
+
+    <div id="trackResult"></div>
+
+  </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section>
+
+  <h2 class="section-title">How VISION Works</h2>
+
+  <div class="how">
+
+    <div class="how-card">
+      <span>01 — BOOK</span>
+      <h3>Book Repair</h3>
+      <p>Select your phone and repair service.</p>
+    </div>
+
+    <div class="how-card">
+      <span>02 — ASSIGN</span>
+      <h3>Technician Assigned</h3>
+      <p>Our team assigns a technician.</p>
+    </div>
+
+    <div class="how-card">
+      <span>03 — VISIT</span>
+      <h3>Doorstep Visit</h3>
+      <p>Technician reaches your location.</p>
+    </div>
+
+    <div class="how-card">
+      <span>04 — REPAIR</span>
+      <h3>Get Repaired</h3>
+      <p>Your phone is repaired at your doorstep.</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <h2>VISION</h2>
+
+  <p>Doorstep Mobile Repair Service</p>
+
+  <br>
+
+  <p>© 2026 VISION. All rights reserved.</p>
+
+</footer>
+
+<script>
+
+  /*
+    ================================
+    SUPABASE CONFIGURATION
+    ================================
+  */
+
+  const SUPABASE_URL =
+    "https://zwznoqkjaithwrutqlyi.supabase.co";
+
+  const SUPABASE_KEY =
+    "sb_publishable_pDBDpbo9nASHLBHz8JB43Q_DtD7qr2O";
+
+
+  /*
+    ================================
+    BOOKING DATA
+    ================================
+  */
+
+  let currentStep = 1;
+
+
+  /*
+    ================================
+    DATE SETUP
+    ================================
+  */
+
+  const dateInput = document.getElementById("bookingDate");
+
+  const today = new Date();
+
+  const yyyy = today.getFullYear();
+
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+
+  const dd = String(today.getDate()).padStart(2, "0");
+
+  dateInput.min = yyyy + "-" + mm + "-" + dd;
+
+
+  /*
+    ================================
+    STEP NAVIGATION
+    ================================
+  */
+
+  function showStep(step) {
+
+    document.querySelectorAll(".step").forEach(function(item) {
+      item.classList.remove("active");
+    });
+
+    document.getElementById("step" + step)
+      .classList.add("active");
+
+    for (let i = 1; i <= 5; i++) {
+
+      const progress =
+        document.getElementById("p" + i);
+
+      if (i <= step) {
+        progress.classList.add("active");
+      } else {
+        progress.classList.remove("active");
+      }
+    }
+
+    currentStep = step;
+
+    window.location.hash = "book";
+  }
+
+
+  /*
+    ================================
+    NEXT STEP
+    ================================
+  */
+
+  function nextStep(step) {
+
+    if (step === 1) {
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const mobile =
+        document.getElementById("mobile").value.trim();
+
+      if (!name) {
+        alert("Please enter your name.");
+        return;
+      }
+
+      if (!/^[0-9]{10}$/.test(mobile)) {
+        alert("Please enter a valid 10 digit mobile number.");
+        return;
+      }
+    }
+
+
+    if (step === 2) {
+
+      const brand =
+        document.getElementById("brand").value;
+
+      const model =
+        document.getElementById("model").value.trim();
+
+      const service =
+        document.getElementById("service").value;
+
+      if (!brand) {
+        alert("Please select your phone brand.");
+        return;
+      }
+
+      if (!model) {
+        alert("Please enter your phone model.");
+        return;
+      }
+
+      if (!service) {
+        alert("Please select repair service.");
+        return;
+      }
+    }
+
+
+    if (step === 3) {
+
+      const address =
+        document.getElementById("address").value.trim();
+
+      if (!address) {
+        alert("Please enter your service address.");
+        return;
+      }
+    }
+
+
+    if (step === 4) {
+
+      const date =
+        document.getElementById("bookingDate").value;
+
+      const time =
+        document.getElementById("timeSlot").value;
+
+      if (!date) {
+        alert("Please select a booking date.");
+        return;
+      }
+
+      if (!time) {
+        alert("Please select a time slot.");
+        return;
+      }
+
+      updateSummary();
+    }
+
+
+    showStep(step + 1);
+  }
+
+
+  /*
+    ================================
+    PREVIOUS STEP
+    ================================
+  */
+
+  function previousStep(step) {
+
+    if (step > 1) {
+      showStep(step - 1);
+    }
+  }
+
+
+  /*
+    ================================
+    SUMMARY
+    ================================
+  */
+
+  function updateSummary() {
+
+    const name =
+      document.getElementById("name").value;
+
+    const mobile =
+      document.getElementById("mobile").value;
+
+    const brand =
+      document.getElementById("brand").value;
+
+    const model =
+      document.getElementById("model").value;
+
+    const service =
+      document.getElementById("service").value;
+
+    const address =
+      document.getElementById("address").value;
+
+    const date =
+      document.getElementById("bookingDate").value;
+
+    const time =
+      document.getElementById("timeSlot").value;
+
+
+    document.getElementById("summaryName").innerText =
+      name;
+
+    document.getElementById("summaryMobile").innerText =
+      mobile;
+
+    document.getElementById("summaryPhone").innerText =
+      brand + " - " + model;
+
+    document.getElementById("summaryService").innerText =
+      service;
+
+    document.getElementById("summaryAddress").innerText =
+      address;
+
+    document.getElementById("summaryDate").innerText =
+      date;
+
+    document.getElementById("summaryTime").innerText =
+      time;
+  }
+
+
+  /*
+    ================================
+    GET CURRENT LOCATION
+    ================================
+  */
+
+  function getLocation() {
+
+    const status =
+      document.getElementById("locationStatus");
+
+    if (!navigator.geolocation) {
+
+      status.innerText =
+        "Location is not supported on this device.";
+
+      return;
+    }
+
+    status.innerText =
+      "Getting your location...";
+
+
+    navigator.geolocation.getCurrentPosition(
+
+      function(position) {
+
+        const latitude =
+          position.coords.latitude;
+
+        const longitude =
+          position.coords.longitude;
+
+        const location =
+          latitude + "," + longitude;
+
+        document.getElementById("location").value =
+          location;
+
+        status.innerText =
+          "✓ Location captured suc
