@@ -182,14 +182,22 @@
       padding: 35px 20px;
     }
 
-    .track input {
+    .track input,
+    .track select,
+    .track textarea {
       width: 100%;
-      max-width: 400px;
+      max-width: 500px;
       padding: 13px;
       border: 1px solid #ccd3df;
       border-radius: 8px;
-      margin: 15px 0;
+      margin: 8px 0;
       font-size: 16px;
+      font-family: Arial, sans-serif;
+    }
+
+    .track textarea {
+      min-height: 100px;
+      resize: vertical;
     }
 
     .track button {
@@ -200,6 +208,27 @@
       color: white;
       font-weight: bold;
       cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .booking-form {
+      max-width: 600px;
+      margin: 20px auto 0;
+      text-align: left;
+    }
+
+    .booking-form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .whatsapp-note {
+      margin-top: 15px;
+      color: #5c667a;
+      font-size: 14px;
+      text-align: center;
     }
 
     footer {
@@ -221,6 +250,10 @@
 
       header {
         padding: 14px 16px;
+      }
+
+      section {
+        padding: 40px 16px;
       }
     }
   </style>
@@ -351,7 +384,7 @@
 
       <p>Enter your VISION Booking ID</p>
 
-      <input type="text" placeholder="Example: VIS-10245">
+      <input type="text" id="bookingId" placeholder="Example: VIS-10245">
 
       <br>
 
@@ -365,15 +398,89 @@
   <section id="book">
     <div class="track">
 
-      <h2>Ready to Repair?</h2>
+      <h2>Book a Repair</h2>
 
-      <p>Book a mobile repair technician at your doorstep.</p>
+      <p>Fill your details and request a doorstep technician.</p>
 
-      <br>
+      <form class="booking-form" onsubmit="sendBooking(event)">
 
-      <a href="tel:+919999999999" class="primary-btn">
-        📞 Call to Book
-      </a>
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter your name"
+          required
+        >
+
+        <label for="phone">Mobile Number</label>
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Enter mobile number"
+          pattern="[0-9]{10}"
+          maxlength="10"
+          required
+        >
+
+        <label for="brand">Phone Brand</label>
+        <select id="brand" required>
+          <option value="">Select brand</option>
+          <option>Apple iPhone</option>
+          <option>Samsung</option>
+          <option>OnePlus</option>
+          <option>Vivo</option>
+          <option>Oppo</option>
+          <option>Realme</option>
+          <option>Redmi / Xiaomi</option>
+          <option>Motorola</option>
+          <option>Nothing</option>
+          <option>Other</option>
+        </select>
+
+        <label for="model">Phone Model</label>
+        <input
+          type="text"
+          id="model"
+          placeholder="Example: iPhone 13 / OnePlus 12"
+          required
+        >
+
+        <label for="problem">Repair Problem</label>
+        <select id="problem" required>
+          <option value="">Select problem</option>
+          <option>Screen Broken</option>
+          <option>Battery Problem</option>
+          <option>Charging Issue</option>
+          <option>Speaker Problem</option>
+          <option>Camera Problem</option>
+          <option>Water Damage</option>
+          <option>Phone Dead</option>
+          <option>Other Repair</option>
+        </select>
+
+        <label for="address">Service Address</label>
+        <textarea
+          id="address"
+          placeholder="Enter your complete address"
+          required
+        ></textarea>
+
+        <label for="time">Preferred Time</label>
+        <select id="time" required>
+          <option value="">Select preferred time</option>
+          <option>9 AM - 12 PM</option>
+          <option>12 PM - 3 PM</option>
+          <option>3 PM - 6 PM</option>
+          <option>6 PM - 9 PM</option>
+        </select>
+
+        <button type="submit">📲 Book Service on WhatsApp</button>
+
+        <p class="whatsapp-note">
+          Your booking details will be sent to VISION WhatsApp.
+        </p>
+
+      </form>
 
     </div>
   </section>
@@ -386,13 +493,54 @@
   </footer>
 
   <script>
+
     function trackRepair() {
+      const bookingId = document.getElementById("bookingId").value.trim();
       const result = document.getElementById("trackResult");
+
+      if (!bookingId) {
+        result.innerText = "Please enter your Booking ID.";
+        result.style.marginTop = "15px";
+        return;
+      }
+
       result.innerText =
         "Tracking system will be connected in the next version.";
+
       result.style.marginTop = "15px";
     }
+
+    function sendBooking(event) {
+
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const brand = document.getElementById("brand").value;
+      const model = document.getElementById("model").value;
+      const problem = document.getElementById("problem").value;
+      const address = document.getElementById("address").value;
+      const time = document.getElementById("time").value;
+
+      const whatsappNumber = "916309877224";
+
+      const message =
+        "🔧 *VISION MOBILE REPAIR BOOKING*%0A%0A" +
+        "👤 Name: " + encodeURIComponent(name) + "%0A" +
+        "📞 Mobile: " + encodeURIComponent(phone) + "%0A" +
+        "📱 Brand: " + encodeURIComponent(brand) + "%0A" +
+        "📲 Model: " + encodeURIComponent(model) + "%0A" +
+        "🛠️ Problem: " + encodeURIComponent(problem) + "%0A" +
+        "📍 Address: " + encodeURIComponent(address) + "%0A" +
+        "⏰ Preferred Time: " + encodeURIComponent(time);
+
+      const whatsappURL =
+        "https://wa.me/" + whatsappNumber + "?text=" + message;
+
+      window.open(whatsappURL, "_blank");
+    }
+
   </script>
 
 </body>
-  </html>
+      </html>
