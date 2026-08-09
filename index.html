@@ -1,364 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VISION - Doorstep Mobile Repair</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>VISION - Doorstep Mobile Repair</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f8fc;
-      color: #172033;
-      line-height: 1.5;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    header {
-      background: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,.08);
-    }
+body{
+  font-family:Arial,sans-serif;
+  background:#f6f8fc;
+  color:#172033;
+  line-height:1.5;
+}
 
-    .logo {
-      font-size: 25px;
-      font-weight: 800;
-      color: #155eef;
-    }
+header{
+  background:#fff;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
 
-    .header-btn,
-    .hero-btn {
-      background: #155eef;
-      color: white;
-      padding: 11px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      display: inline-block;
-    }
+.logo{
+  font-size:25px;
+  font-weight:800;
+  color:#155eef;
+}
 
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: linear-gradient(135deg,#eaf2ff,#fff);
-    }
+.header-btn,
+.hero-btn{
+  background:#155eef;
+  color:#fff;
+  padding:11px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  display:inline-block;
+}
 
-    .hero h1 {
-      font-size: 40px;
-      line-height: 1.15;
-      margin-bottom: 15px;
-    }
+.hero{
+  padding:65px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#eaf2ff,#fff);
+}
 
-    .hero h1 span {
-      color: #155eef;
-    }
+.hero h1{
+  font-size:40px;
+  line-height:1.15;
+  margin-bottom:15px;
+}
 
-    .hero p {
-      color: #5c667a;
-      max-width: 600px;
-      margin: auto;
-      font-size: 17px;
-    }
+.hero h1 span{
+  color:#155eef;
+}
 
-    .hero-btn {
-      margin-top: 25px;
-      padding: 14px 22px;
-    }
+.hero p{
+  color:#5c667a;
+  max-width:600px;
+  margin:auto;
+  font-size:17px;
+}
 
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 45px 20px;
-    }
+.hero-btn{
+  margin-top:25px;
+  padding:14px 22px;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 28px;
-      margin-bottom: 25px;
-    }
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:45px 20px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-      gap: 15px;
-    }
+.section-title{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:25px;
+}
 
-    .service {
-      background: white;
-      padding: 22px 10px;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.06);
-    }
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+}
 
-    .service-icon {
-      font-size: 30px;
-      margin-bottom: 8px;
-    }
+.service{
+  background:#fff;
+  padding:22px 10px;
+  text-align:center;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
 
-    .service h3 {
-      font-size: 15px;
-    }
+.service-icon{
+  font-size:30px;
+  margin-bottom:8px;
+}
 
-    .booking-box {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 16px;
-      box-shadow: 0 5px 25px rgba(0,0,0,.08);
-      max-width: 650px;
-      margin: auto;
-    }
+.service h3{
+  font-size:15px;
+}
 
-    .progress {
-      display: flex;
-      justify-content: space-between;
-      gap: 5px;
-      margin-bottom: 30px;
-    }
+.booking-box{
+  background:#fff;
+  padding:30px 20px;
+  border-radius:16px;
+  box-shadow:0 5px 25px rgba(0,0,0,.08);
+  max-width:650px;
+  margin:auto;
+}
 
-    .progress div {
-      flex: 1;
-      height: 5px;
-      background: #dce2ec;
-      border-radius: 10px;
-    }
+.progress{
+  display:flex;
+  gap:5px;
+  margin-bottom:30px;
+}
 
-    .progress .active {
-      background: #155eef;
-    }
+.progress div{
+  flex:1;
+  height:5px;
+  background:#dce2ec;
+  border-radius:10px;
+}
 
-    .step {
-      display: none;
-    }
+.progress .active{
+  background:#155eef;
+}
 
-    .step.active {
-      display: block;
-    }
+.step{
+  display:none;
+}
 
-    .step h2 {
-      margin-bottom: 8px;
-    }
+.step.active{
+  display:block;
+}
 
-    .step p {
-      color: #667085;
-      margin-bottom: 20px;
-    }
+.step h2{
+  margin-bottom:8px;
+}
 
-    label {
-      display: block;
-      font-weight: 700;
-      margin-top: 15px;
-      margin-bottom: 6px;
-    }
+.step p{
+  color:#667085;
+  margin-bottom:20px;
+}
 
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px;
-      border: 1px solid #ccd3df;
-      border-radius: 8px;
-      font-size: 16px;
-      font-family: Arial,sans-serif;
-      outline: none;
-    }
+label{
+  display:block;
+  font-weight:700;
+  margin-top:15px;
+  margin-bottom:6px;
+}
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #155eef;
-    }
+input,
+select,
+textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccd3df;
+  border-radius:8px;
+  font-size:16px;
+  font-family:Arial,sans-serif;
+  outline:none;
+}
 
-    textarea {
-      min-height: 100px;
-      resize: vertical;
-    }
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:#155eef;
+}
 
-    .location-btn {
-      margin-top: 10px;
-      background: #eef4ff;
-      color: #155eef;
-      border: 1px solid #155eef;
-      padding: 11px 15px;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+textarea{
+  min-height:100px;
+  resize:vertical;
+}
 
-    .location-status {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #16a34a;
-    }
+.buttons{
+  display:flex;
+  gap:10px;
+  margin-top:25px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 10px;
-      margin-top: 25px;
-    }
+.btn{
+  flex:1;
+  border:none;
+  padding:14px;
+  border-radius:9px;
+  font-size:16px;
+  font-weight:700;
+  cursor:pointer;
+}
 
-    .btn {
-      flex: 1;
-      border: none;
-      padding: 14px;
-      border-radius: 9px;
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+.next{
+  background:#155eef;
+  color:#fff;
+}
 
-    .next {
-      background: #155eef;
-      color: white;
-    }
+.back{
+  background:#eef1f6;
+  color:#172033;
+}
 
-    .back {
-      background: #eef1f6;
-      color: #172033;
-    }
+.confirm{
+  background:#16a34a;
+  color:#fff;
+}
 
-    .confirm {
-      background: #16a34a;
-      color: white;
-    }
+.location-btn{
+  margin-top:10px;
+  background:#eef4ff;
+  color:#155eef;
+  border:1px solid #155eef;
+  padding:11px 15px;
+  border-radius:8px;
+  font-weight:700;
+  cursor:pointer;
+}
 
-    .summary {
-      background: #f7f9fc;
-      border-radius: 10px;
-      padding: 18px;
-    }
+.location-status{
+  margin-top:8px;
+  font-size:14px;
+  color:#16a34a;
+}
 
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 9px 0;
-      border-bottom: 1px solid #e5e7eb;
-    }
+.summary{
+  background:#f7f9fc;
+  border-radius:10px;
+  padding:18px;
+}
 
-    .summary-row:last-child {
-      border-bottom: none;
-    }
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:9px 0;
+  border-bottom:1px solid #e5e7eb;
+}
 
-    .success {
-      display: none;
-      text-align: center;
-      padding: 25px 10px;
-    }
+.summary-row:last-child{
+  border-bottom:none;
+}
 
-    .success.active {
-      display: block;
-    }
+.success{
+  display:none;
+  text-align:center;
+  padding:25px 10px;
+}
 
-    .success-icon {
-      font-size: 55px;
-      margin-bottom: 10px;
-    }
+.success.active{
+  display:block;
+}
 
-    .booking-id {
-      background: #eaf2ff;
-      color: #155eef;
-      font-size: 25px;
-      font-weight: 800;
-      padding: 14px;
-      border-radius: 10px;
-      margin: 20px 0;
-      letter-spacing: 1px;
-    }
+.success-icon{
+  font-size:55px;
+  margin-bottom:10px;
+}
 
-    .whatsapp-btn {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      padding: 13px 18px;
-      border-radius: 9px;
-      font-weight: 700;
-      margin-top: 10px;
-    }
+.booking-id{
+  background:#eaf2ff;
+  color:#155eef;
+  font-size:25px;
+  font-weight:800;
+  padding:14px;
+  border-radius:10px;
+  margin:20px 0;
+  letter-spacing:1px;
+}
 
-    .track-box {
-      background: white;
-      padding: 25px 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.07);
-      max-width: 650px;
-      margin: auto;
-      text-align: center;
-    }
+.whatsapp-btn{
+  display:inline-block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:13px 18px;
+  border-radius:9px;
+  font-weight:700;
+  margin-top:10px;
+}
 
-    .track-box button {
-      margin-top: 12px;
-      background: #155eef;
-      color: white;
-      border: none;
-      padding: 13px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-    }
+.track-box{
+  background:#fff;
+  padding:25px 20px;
+  border-radius:15px;
+  box-shadow:0 4px 20px rgba(0,0,0,.07);
+  max-width:650px;
+  margin:auto;
+  text-align:center;
+}
 
-    #trackResult {
-      margin-top: 15px;
-      font-weight: 600;
-    }
+.track-box button{
+  margin-top:12px;
+  background:#155eef;
+  color:#fff;
+  border:none;
+  padding:13px 20px;
+  border-radius:8px;
+  font-weight:700;
+  cursor:pointer;
+}
 
-    .how {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-      gap: 15px;
-    }
+#trackResult{
+  margin-top:15px;
+  font-weight:600;
+}
 
-    .how-card {
-      background: white;
-      padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,.06);
-    }
+.how{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
 
-    .how-card span {
-      color: #155eef;
-      font-weight: 800;
-    }
+.how-card{
+  background:#fff;
+  padding:22px;
+  border-radius:12px;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
 
-    footer {
-      background: #0e1525;
-      color: #cbd3e1;
-      text-align: center;
-      padding: 35px 20px;
-    }
+.how-card span{
+  color:#155eef;
+  font-weight:800;
+}
 
-    footer h2 {
-      color: white;
-      margin-bottom: 8px;
-    }
+footer{
+  background:#0e1525;
+  color:#cbd3e1;
+  text-align:center;
+  padding:35px 20px;
+}
 
-    @media(max-width:600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+footer h2{
+  color:#fff;
+  margin-bottom:8px;
+}
 
-      .booking-box {
-        padding: 22px 16px;
-      }
+@media(max-width:600px){
 
-      .summary-row {
-        flex-direction: column;
-        gap: 2px;
-      }
-    }
-  </style>
+  .hero h1{
+    font-size:32px;
+  }
+
+  .booking-box{
+    padding:22px 16px;
+  }
+
+  .summary-row{
+    flex-direction:column;
+    gap:2px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -369,18 +370,28 @@
 </header>
 
 <section class="hero">
-  <h1>Mobile Repair<br><span>At Your Doorstep</span></h1>
+
+  <h1>
+    Mobile Repair<br>
+    <span>At Your Doorstep</span>
+  </h1>
 
   <p>
     Fast, reliable and professional mobile repair service at your
     home or office.
   </p>
 
-  <a href="#book" class="hero-btn">🔧 Book a Repair</a>
+  <a href="#book" class="hero-btn">
+    🔧 Book a Repair
+  </a>
+
 </section>
 
 <section>
-  <h2 class="section-title">Our Services</h2>
+
+  <h2 class="section-title">
+    Our Services
+  </h2>
 
   <div class="services">
 
@@ -425,16 +436,19 @@
     </div>
 
   </div>
+
 </section>
 
 <section id="book">
 
-  <h2 class="section-title">Book Your Repair</h2>
+  <h2 class="section-title">
+    Book Your Repair
+  </h2>
 
   <div class="booking-box">
 
     <div class="progress">
-      <div class="active" id="p1"></div>
+      <div id="p1" class="active"></div>
       <div id="p2"></div>
       <div id="p3"></div>
       <div id="p4"></div>
@@ -443,15 +457,24 @@
 
     <!-- STEP 1 -->
 
-    <div class="step active" id="step1">
+    <div id="step1" class="step active">
 
       <h2>01. Customer Details</h2>
-      <p>Tell us how we can contact you.</p>
+
+      <p>
+        Tell us how we can contact you.
+      </p>
 
       <label>Your Name</label>
-      <input type="text" id="name" placeholder="Enter your name">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your name"
+      >
 
       <label>Mobile Number</label>
+
       <input
         type="tel"
         id="mobile"
@@ -461,24 +484,37 @@
       >
 
       <div class="buttons">
-        <button class="btn next" onclick="nextStep(1)">
+
+        <button
+          type="button"
+          class="btn next"
+          onclick="nextStep(1)"
+        >
           Continue →
         </button>
+
       </div>
 
     </div>
 
     <!-- STEP 2 -->
 
-    <div class="step" id="step2">
+    <div id="step2" class="step">
 
       <h2>02. Service Selection</h2>
-      <p>Select your phone and repair service.</p>
+
+      <p>
+        Select your phone and repair service.
+      </p>
 
       <label>Phone Brand</label>
 
       <select id="brand">
-        <option value="">Select brand</option>
+
+        <option value="">
+          Select brand
+        </option>
+
         <option>Apple iPhone</option>
         <option>Samsung</option>
         <option>OnePlus</option>
@@ -489,6 +525,7 @@
         <option>Motorola</option>
         <option>Nothing</option>
         <option>Other</option>
+
       </select>
 
       <label>Phone Model</label>
@@ -502,7 +539,11 @@
       <label>Repair Service</label>
 
       <select id="service">
-        <option value="">Select service</option>
+
+        <option value="">
+          Select service
+        </option>
+
         <option>Screen Repair</option>
         <option>Battery Replacement</option>
         <option>Charging Issue</option>
@@ -511,26 +552,40 @@
         <option>Water Damage</option>
         <option>Phone Dead</option>
         <option>Other Repair</option>
+
       </select>
 
       <div class="buttons">
-        <button class="btn back" onclick="previousStep(2)">
+
+        <button
+          type="button"
+          class="btn back"
+          onclick="previousStep(2)"
+        >
           ← Back
         </button>
 
-        <button class="btn next" onclick="nextStep(2)">
+        <button
+          type="button"
+          class="btn next"
+          onclick="nextStep(2)"
+        >
           Continue →
         </button>
+
       </div>
 
     </div>
 
     <!-- STEP 3 -->
 
-    <div class="step" id="step3">
+    <div id="step3" class="step">
 
       <h2>03. Address & Location</h2>
-      <p>Where should our technician visit?</p>
+
+      <p>
+        Where should our technician visit?
+      </p>
 
       <label>Complete Address</label>
 
@@ -539,32 +594,55 @@
         placeholder="House / Flat, Street, Area, City"
       ></textarea>
 
-      <button class="location-btn" onclick="getLocation()">
+      <button
+        type="button"
+        class="location-btn"
+        onclick="getLocation()"
+      >
         📍 Use My Current Location
       </button>
 
-      <div id="locationStatus" class="location-status"></div>
+      <div
+        id="locationStatus"
+        class="location-status"
+      ></div>
 
-      <input type="hidden" id="location">
+      <input
+        type="hidden"
+        id="location"
+      >
 
       <div class="buttons">
-        <button class="btn back" onclick="previousStep(3)">
+
+        <button
+          type="button"
+          class="btn back"
+          onclick="previousStep(3)"
+        >
           ← Back
         </button>
 
-        <button class="btn next" onclick="nextStep(3)">
+        <button
+          type="button"
+          class="btn next"
+          onclick="nextStep(3)"
+        >
           Continue →
         </button>
+
       </div>
 
     </div>
 
     <!-- STEP 4 -->
 
-    <div class="step" id="step4">
+    <div id="step4" class="step">
 
       <h2>04. Date & Time</h2>
-      <p>Select your preferred doorstep visit.</p>
+
+      <p>
+        Select your preferred doorstep visit.
+      </p>
 
       <label>Preferred Date</label>
 
@@ -576,31 +654,49 @@
       <label>Preferred Time</label>
 
       <select id="timeSlot">
-        <option value="">Select time slot</option>
+
+        <option value="">
+          Select time slot
+        </option>
+
         <option>9 AM - 12 PM</option>
         <option>12 PM - 3 PM</option>
         <option>3 PM - 6 PM</option>
         <option>6 PM - 9 PM</option>
+
       </select>
 
       <div class="buttons">
-        <button class="btn back" onclick="previousStep(4)">
+
+        <button
+          type="button"
+          class="btn back"
+          onclick="previousStep(4)"
+        >
           ← Back
         </button>
 
-        <button class="btn next" onclick="nextStep(4)">
+        <button
+          type="button"
+          class="btn next"
+          onclick="nextStep(4)"
+        >
           Review Booking →
         </button>
+
       </div>
 
     </div>
 
     <!-- STEP 5 -->
 
-    <div class="step" id="step5">
+    <div id="step5" class="step">
 
       <h2>05. Confirm Booking</h2>
-      <p>Please check your details before confirming.</p>
+
+      <p>
+        Please check your details before confirming.
+      </p>
 
       <div class="summary">
 
@@ -641,17 +737,19 @@
 
       </div>
 
-      <p id="bookingError" class="error"></p>
-
       <div class="buttons">
 
-        <button class="btn back" onclick="previousStep(5)">
+        <button
+          type="button"
+          class="btn back"
+          onclick="previousStep(5)"
+        >
           ← Back
         </button>
 
         <button
+          type="button"
           class="btn confirm"
-          id="confirmButton"
           onclick="confirmBooking()"
         >
           ✓ Confirm Booking
@@ -663,26 +761,35 @@
 
     <!-- SUCCESS -->
 
-    <div class="success" id="success">
+    <div id="success" class="success">
 
-      <div class="success-icon">✅</div>
+      <div class="success-icon">
+        ✅
+      </div>
 
-      <h2>Booking Confirmed!</h2>
+      <h2>
+        Booking Confirmed!
+      </h2>
 
-      <p>Your VISION doorstep repair request has been received.</p>
+      <p>
+        Your VISION doorstep repair request has been received.
+      </p>
 
-      <div class="booking-id" id="generatedBookingId">
+      <div
+        id="generatedBookingId"
+        class="booking-id"
+      >
         VIS-00000
       </div>
 
       <p>
-        Please save your Booking ID for tracking your repair.
+        Save this Booking ID for tracking.
       </p>
 
       <a
-        href="#"
         id="whatsappLink"
         class="whatsapp-btn"
+        href="#"
         target="_blank"
       >
         📲 Send Booking to WhatsApp
@@ -694,15 +801,19 @@
 
 </section>
 
-<!-- TRACKING -->
+<!-- TRACK -->
 
 <section id="track">
 
-  <h2 class="section-title">Track Your Repair</h2>
+  <h2 class="section-title">
+    Track Your Repair
+  </h2>
 
   <div class="track-box">
 
-    <p>Enter your VISION Booking ID</p>
+    <p>
+      Enter your VISION Booking ID
+    </p>
 
     <br>
 
@@ -712,7 +823,10 @@
       placeholder="Example: VIS-12345"
     >
 
-    <button onclick="trackBooking()">
+    <button
+      type="button"
+      onclick="trackBooking()"
+    >
       🔎 Track Booking
     </button>
 
@@ -722,36 +836,46 @@
 
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW -->
 
 <section>
 
-  <h2 class="section-title">How VISION Works</h2>
+  <h2 class="section-title">
+    How VISION Works
+  </h2>
 
   <div class="how">
 
     <div class="how-card">
       <span>01 — BOOK</span>
       <h3>Book Repair</h3>
-      <p>Select your phone and repair service.</p>
+      <p>
+        Select your phone and repair service.
+      </p>
     </div>
 
     <div class="how-card">
       <span>02 — ASSIGN</span>
       <h3>Technician Assigned</h3>
-      <p>Our team assigns a technician.</p>
+      <p>
+        Our team assigns a technician.
+      </p>
     </div>
 
     <div class="how-card">
       <span>03 — VISIT</span>
       <h3>Doorstep Visit</h3>
-      <p>Technician reaches your location.</p>
+      <p>
+        Technician reaches your location.
+      </p>
     </div>
 
     <div class="how-card">
       <span>04 — REPAIR</span>
       <h3>Get Repaired</h3>
-      <p>Your phone is repaired at your doorstep.</p>
+      <p>
+        Your phone is repaired at your doorstep.
+      </p>
     </div>
 
   </div>
@@ -762,292 +886,537 @@
 
   <h2>VISION</h2>
 
-  <p>Doorstep Mobile Repair Service</p>
+  <p>
+    Doorstep Mobile Repair Service
+  </p>
 
   <br>
 
-  <p>© 2026 VISION. All rights reserved.</p>
+  <p>
+    © 2026 VISION. All rights reserved.
+  </p>
 
 </footer>
 
 <script>
 
-  /*
-    ================================
-    SUPABASE CONFIGURATION
-    ================================
-  */
+/* =========================
+   SETTINGS
+========================= */
 
-  const SUPABASE_URL =
-    "https://zwznoqkjaithwrutqlyi.supabase.co";
+const WHATSAPP_NUMBER = "916309877224";
 
-  const SUPABASE_KEY =
-    "sb_publishable_pDBDpbo9nASHLBHz8JB43Q_DtD7qr2O";
+let currentStep = 1;
 
 
-  /*
-    ================================
-    BOOKING DATA
-    ================================
-  */
+/* =========================
+   DATE
+========================= */
 
-  let currentStep = 1;
+const dateInput =
+  document.getElementById("bookingDate");
 
+const today = new Date();
 
-  /*
-    ================================
-    DATE SETUP
-    ================================
-  */
+const year =
+  today.getFullYear();
 
-  const dateInput = document.getElementById("bookingDate");
+const month =
+  String(today.getMonth() + 1).padStart(2,"0");
 
-  const today = new Date();
+const day =
+  String(today.getDate()).padStart(2,"0");
 
-  const yyyy = today.getFullYear();
-
-  const mm = String(today.getMonth() + 1).padStart(2, "0");
-
-  const dd = String(today.getDate()).padStart(2, "0");
-
-  dateInput.min = yyyy + "-" + mm + "-" + dd;
+dateInput.min =
+  year + "-" + month + "-" + day;
 
 
-  /*
-    ================================
-    STEP NAVIGATION
-    ================================
-  */
+/* =========================
+   SHOW STEP
+========================= */
 
-  function showStep(step) {
+function showStep(step){
 
-    document.querySelectorAll(".step").forEach(function(item) {
+  document
+    .querySelectorAll(".step")
+    .forEach(function(item){
+
       item.classList.remove("active");
+
     });
 
-    document.getElementById("step" + step)
-      .classList.add("active");
+  const selected =
+    document.getElementById("step" + step);
 
-    for (let i = 1; i <= 5; i++) {
-
-      const progress =
-        document.getElementById("p" + i);
-
-      if (i <= step) {
-        progress.classList.add("active");
-      } else {
-        progress.classList.remove("active");
-      }
-    }
-
-    currentStep = step;
-
-    window.location.hash = "book";
+  if(selected){
+    selected.classList.add("active");
   }
 
+  for(let i = 1; i <= 5; i++){
 
-  /*
-    ================================
-    NEXT STEP
-    ================================
-  */
+    const progress =
+      document.getElementById("p" + i);
 
-  function nextStep(step) {
-
-    if (step === 1) {
-
-      const name =
-        document.getElementById("name").value.trim();
-
-      const mobile =
-        document.getElementById("mobile").value.trim();
-
-      if (!name) {
-        alert("Please enter your name.");
-        return;
-      }
-
-      if (!/^[0-9]{10}$/.test(mobile)) {
-        alert("Please enter a valid 10 digit mobile number.");
-        return;
-      }
+    if(i <= step){
+      progress.classList.add("active");
+    }else{
+      progress.classList.remove("active");
     }
 
-
-    if (step === 2) {
-
-      const brand =
-        document.getElementById("brand").value;
-
-      const model =
-        document.getElementById("model").value.trim();
-
-      const service =
-        document.getElementById("service").value;
-
-      if (!brand) {
-        alert("Please select your phone brand.");
-        return;
-      }
-
-      if (!model) {
-        alert("Please enter your phone model.");
-        return;
-      }
-
-      if (!service) {
-        alert("Please select repair service.");
-        return;
-      }
-    }
-
-
-    if (step === 3) {
-
-      const address =
-        document.getElementById("address").value.trim();
-
-      if (!address) {
-        alert("Please enter your service address.");
-        return;
-      }
-    }
-
-
-    if (step === 4) {
-
-      const date =
-        document.getElementById("bookingDate").value;
-
-      const time =
-        document.getElementById("timeSlot").value;
-
-      if (!date) {
-        alert("Please select a booking date.");
-        return;
-      }
-
-      if (!time) {
-        alert("Please select a time slot.");
-        return;
-      }
-
-      updateSummary();
-    }
-
-
-    showStep(step + 1);
   }
 
+  currentStep = step;
 
-  /*
-    ================================
-    PREVIOUS STEP
-    ================================
-  */
-
-  function previousStep(step) {
-
-    if (step > 1) {
-      showStep(step - 1);
-    }
-  }
+  document
+    .getElementById("book")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+}
 
 
-  /*
-    ================================
-    SUMMARY
-    ================================
-  */
+/* =========================
+   NEXT STEP
+========================= */
 
-  function updateSummary() {
+function nextStep(step){
+
+  if(step === 1){
 
     const name =
-      document.getElementById("name").value;
+      document
+        .getElementById("name")
+        .value
+        .trim();
 
     const mobile =
-      document.getElementById("mobile").value;
+      document
+        .getElementById("mobile")
+        .value
+        .trim();
 
-    const brand =
-      document.getElementById("brand").value;
-
-    const model =
-      document.getElementById("model").value;
-
-    const service =
-      document.getElementById("service").value;
-
-    const address =
-      document.getElementById("address").value;
-
-    const date =
-      document.getElementById("bookingDate").value;
-
-    const time =
-      document.getElementById("timeSlot").value;
-
-
-    document.getElementById("summaryName").innerText =
-      name;
-
-    document.getElementById("summaryMobile").innerText =
-      mobile;
-
-    document.getElementById("summaryPhone").innerText =
-      brand + " - " + model;
-
-    document.getElementById("summaryService").innerText =
-      service;
-
-    document.getElementById("summaryAddress").innerText =
-      address;
-
-    document.getElementById("summaryDate").innerText =
-      date;
-
-    document.getElementById("summaryTime").innerText =
-      time;
-  }
-
-
-  /*
-    ================================
-    GET CURRENT LOCATION
-    ================================
-  */
-
-  function getLocation() {
-
-    const status =
-      document.getElementById("locationStatus");
-
-    if (!navigator.geolocation) {
-
-      status.innerText =
-        "Location is not supported on this device.";
-
+    if(name === ""){
+      alert("Please enter your name.");
       return;
     }
 
+    if(!/^[0-9]{10}$/.test(mobile)){
+      alert(
+        "Please enter a valid 10 digit mobile number."
+      );
+      return;
+    }
+
+  }
+
+
+  if(step === 2){
+
+    const brand =
+      document
+        .getElementById("brand")
+        .value;
+
+    const model =
+      document
+        .getElementById("model")
+        .value
+        .trim();
+
+    const service =
+      document
+        .getElementById("service")
+        .value;
+
+    if(brand === ""){
+      alert("Please select your phone brand.");
+      return;
+    }
+
+    if(model === ""){
+      alert("Please enter your phone model.");
+      return;
+    }
+
+    if(service === ""){
+      alert("Please select repair service.");
+      return;
+    }
+
+  }
+
+
+  if(step === 3){
+
+    const address =
+      document
+        .getElementById("address")
+        .value
+        .trim();
+
+    if(address === ""){
+      alert("Please enter your service address.");
+      return;
+    }
+
+  }
+
+
+  if(step === 4){
+
+    const date =
+      document
+        .getElementById("bookingDate")
+        .value;
+
+    const time =
+      document
+        .getElementById("timeSlot")
+        .value;
+
+    if(date === ""){
+      alert("Please select a booking date.");
+      return;
+    }
+
+    if(time === ""){
+      alert("Please select a time slot.");
+      return;
+    }
+
+    updateSummary();
+
+  }
+
+
+  showStep(step + 1);
+}
+
+
+/* =========================
+   PREVIOUS
+========================= */
+
+function previousStep(step){
+
+  if(step > 1){
+    showStep(step - 1);
+  }
+
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+function updateSummary(){
+
+  const name =
+    document.getElementById("name").value;
+
+  const mobile =
+    document.getElementById("mobile").value;
+
+  const brand =
+    document.getElementById("brand").value;
+
+  const model =
+    document.getElementById("model").value;
+
+  const service =
+    document.getElementById("service").value;
+
+  const address =
+    document.getElementById("address").value;
+
+  const date =
+    document.getElementById("bookingDate").value;
+
+  const time =
+    document.getElementById("timeSlot").value;
+
+
+  document.getElementById("summaryName")
+    .innerText = name;
+
+  document.getElementById("summaryMobile")
+    .innerText = mobile;
+
+  document.getElementById("summaryPhone")
+    .innerText = brand + " - " + model;
+
+  document.getElementById("summaryService")
+    .innerText = service;
+
+  document.getElementById("summaryAddress")
+    .innerText = address;
+
+  document.getElementById("summaryDate")
+    .innerText = date;
+
+  document.getElementById("summaryTime")
+    .innerText = time;
+
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+function getLocation(){
+
+  const status =
+    document.getElementById("locationStatus");
+
+  if(!navigator.geolocation){
+
     status.innerText =
-      "Getting your location...";
+      "Location is not supported.";
+
+    return;
+  }
+
+  status.innerText =
+    "Getting your location...";
 
 
-    navigator.geolocation.getCurrentPosition(
+  navigator.geolocation.getCurrentPosition(
 
-      function(position) {
+    function(position){
 
-        const latitude =
-          position.coords.latitude;
+      const latitude =
+        position.coords.latitude;
 
-        const longitude =
-          position.coords.longitude;
+      const longitude =
+        position.coords.longitude;
 
-        const location =
-          latitude + "," + longitude;
+      const coordinates =
+        latitude + "," + longitude;
 
-        document.getElementById("location").value =
-          location;
+      document
+        .getElementById("location")
+        .value = coordinates;
 
-        status.innerText =
-          "✓ Location captured suc
+      status.innerText =
+        "✓ Location captured successfully.";
+
+    },
+
+    function(){
+
+      status.innerText =
+        "Unable to get location. Please enter address manually.";
+
+    }
+
+  );
+
+}
+
+
+/* =========================
+   CONFIRM BOOKING
+========================= */
+
+function confirmBooking(){
+
+  const bookingId =
+    "VIS-" +
+    Math.floor(
+      10000 + Math.random() * 90000
+    );
+
+  const name =
+    document.getElementById("name").value;
+
+  const mobile =
+    document.getElementById("mobile").value;
+
+  const brand =
+    document.getElementById("brand").value;
+
+  const model =
+    document.getElementById("model").value;
+
+  const service =
+    document.getElementById("service").value;
+
+  const address =
+    document.getElementById("address").value;
+
+  const date =
+    document.getElementById("bookingDate").value;
+
+  const time =
+    document.getElementById("timeSlot").value;
+
+  const location =
+    document.getElementById("location").value;
+
+
+  const booking = {
+
+    id:bookingId,
+
+    name:name,
+
+    mobile:mobile,
+
+    brand:brand,
+
+    model:model,
+
+    service:service,
+
+    address:address,
+
+    date:date,
+
+    time:time,
+
+    location:location
+
+  };
+
+
+  localStorage.setItem(
+    "vision_" + bookingId,
+    JSON.stringify(booking)
+  );
+
+
+  document
+    .getElementById("generatedBookingId")
+    .innerText = bookingId;
+
+
+  const whatsappMessage =
+    "🔧 VISION MOBILE REPAIR BOOKING\n\n" +
+    "Booking ID: " + bookingId + "\n" +
+    "Name: " + name + "\n" +
+    "Mobile: " + mobile + "\n" +
+    "Phone: " + brand + " - " + model + "\n" +
+    "Service: " + service + "\n" +
+    "Address: " + address + "\n" +
+    "Date: " + date + "\n" +
+    "Time: " + time +
+    (location
+      ? "\nLocation: https://maps.google.com/?q=" + location
+      : "");
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    WHATSAPP_NUMBER +
+    "?text=" +
+    encodeURIComponent(
+      whatsappMessage
+    );
+
+
+  document
+    .getElementById("whatsappLink")
+    .href = whatsappURL;
+
+
+  document
+    .querySelectorAll(".step")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
+
+
+  document
+    .getElementById("success")
+    .classList.add("active");
+
+
+  for(let i = 1; i <= 5; i++){
+
+    document
+      .getElementById("p" + i)
+      .classList.add("active");
+
+  }
+
+}
+
+
+/* =========================
+   TRACK BOOKING
+========================= */
+
+function trackBooking(){
+
+  const id =
+    document
+      .getElementById("trackBookingId")
+      .value
+      .trim()
+      .toUpperCase();
+
+  const result =
+    document.getElementById("trackResult");
+
+
+  if(id === ""){
+
+    result.innerText =
+      "Please enter your Booking ID.";
+
+    return;
+  }
+
+
+  const saved =
+    localStorage.getItem(
+      "vision_" + id
+    );
+
+
+  if(!saved){
+
+    result.innerText =
+      "Booking not found on this device.";
+
+    result.style.color =
+      "#dc2626";
+
+    return;
+  }
+
+
+  const booking =
+    JSON.parse(saved);
+
+
+  result.style.color =
+    "#16a34a";
+
+  result.innerHTML =
+    "✓ Booking Found<br><br>" +
+    "Customer: " +
+    booking.name +
+    "<br>" +
+    "Service: " +
+    booking.service +
+    "<br>" +
+    "Date: " +
+    booking.date +
+    "<br>" +
+    "Time: " +
+    booking.time;
+
+}
+
+
+/* =========================
+   FINISH
+========================= */
+
+</script>
+
+</body>
+</html>
