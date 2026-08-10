@@ -345,7 +345,6 @@ footer h2{
 }
 
 @media(max-width:600px){
-
   .hero h1{
     font-size:32px;
   }
@@ -370,7 +369,6 @@ footer h2{
 </header>
 
 <section class="hero">
-
   <h1>
     Mobile Repair<br>
     <span>At Your Doorstep</span>
@@ -384,1037 +382,790 @@ footer h2{
   <a href="#book" class="hero-btn">
     🔧 Book a Repair
   </a>
-
 </section>
 
 <section>
 
-  <h2 class="section-title">
-    Our Services
-  </h2>
+<h2 class="section-title">Our Services</h2>
 
-  <div class="services">
+<div class="services">
 
-    <div class="service">
-      <div class="service-icon">📱</div>
-      <h3>Screen Repair</h3>
-    </div>
+<div class="service">
+<div class="service-icon">📱</div>
+<h3>Screen Repair</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">🔋</div>
-      <h3>Battery</h3>
-    </div>
+<div class="service">
+<div class="service-icon">🔋</div>
+<h3>Battery</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">🔌</div>
-      <h3>Charging</h3>
-    </div>
+<div class="service">
+<div class="service-icon">🔌</div>
+<h3>Charging</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">🔊</div>
-      <h3>Speaker</h3>
-    </div>
+<div class="service">
+<div class="service-icon">🔊</div>
+<h3>Speaker</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">📷</div>
-      <h3>Camera</h3>
-    </div>
+<div class="service">
+<div class="service-icon">📷</div>
+<h3>Camera</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">💧</div>
-      <h3>Water Damage</h3>
-    </div>
+<div class="service">
+<div class="service-icon">💧</div>
+<h3>Water Damage</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">⚡</div>
-      <h3>Phone Dead</h3>
-    </div>
+<div class="service">
+<div class="service-icon">⚡</div>
+<h3>Phone Dead</h3>
+</div>
 
-    <div class="service">
-      <div class="service-icon">🛠️</div>
-      <h3>Other Repair</h3>
-    </div>
+<div class="service">
+<div class="service-icon">🛠️</div>
+<h3>Other Repair</h3>
+</div>
 
-  </div>
-
+</div>
 </section>
 
 <section id="book">
 
-  <h2 class="section-title">
-    Book Your Repair
-  </h2>
+<h2 class="section-title">Book Your Repair</h2>
 
-  <div class="booking-box">
+<div class="booking-box">
 
-    <div class="progress">
-      <div id="p1" class="active"></div>
-      <div id="p2"></div>
-      <div id="p3"></div>
-      <div id="p4"></div>
-      <div id="p5"></div>
-    </div>
+<div class="progress">
+<div id="p1" class="active"></div>
+<div id="p2"></div>
+<div id="p3"></div>
+<div id="p4"></div>
+<div id="p5"></div>
+</div>
 
-    <!-- STEP 1 -->
+<div id="step1" class="step active">
 
-    <div id="step1" class="step active">
+<h2>01. Customer Details</h2>
+<p>Tell us how we can contact you.</p>
 
-      <h2>01. Customer Details</h2>
+<label>Your Name</label>
+<input id="name" type="text" placeholder="Enter your name">
 
-      <p>
-        Tell us how we can contact you.
-      </p>
+<label>Mobile Number</label>
+<input id="mobile" type="tel" maxlength="10"
+placeholder="10 digit mobile number">
 
-      <label>Your Name</label>
+<div class="buttons">
+<button class="btn next" onclick="nextStep(1)">
+Continue →
+</button>
+</div>
 
-      <input
-        type="text"
-        id="name"
-        placeholder="Enter your name"
-      >
+</div>
 
-      <label>Mobile Number</label>
+<div id="step2" class="step">
 
-      <input
-        type="tel"
-        id="mobile"
-        placeholder="10 digit mobile number"
-        maxlength="10"
-        inputmode="numeric"
-      >
+<h2>02. Service Selection</h2>
+<p>Select your phone and repair service.</p>
 
-      <div class="buttons">
+<label>Phone Brand</label>
 
-        <button
-          type="button"
-          class="btn next"
-          onclick="nextStep(1)"
-        >
-          Continue →
-        </button>
+<select id="brand">
+<option value="">Select brand</option>
+<option>Apple iPhone</option>
+<option>Samsung</option>
+<option>OnePlus</option>
+<option>Vivo</option>
+<option>Oppo</option>
+<option>Realme</option>
+<option>Redmi / Xiaomi</option>
+<option>Motorola</option>
+<option>Nothing</option>
+<option>Other</option>
+</select>
 
-      </div>
+<label>Phone Model</label>
+<input id="model" type="text" placeholder="Example: iPhone 13">
 
-    </div>
+<label>Repair Service</label>
 
-    <!-- STEP 2 -->
+<select id="service">
+<option value="">Select service</option>
+<option>Screen Repair</option>
+<option>Battery Replacement</option>
+<option>Charging Issue</option>
+<option>Speaker Repair</option>
+<option>Camera Repair</option>
+<option>Water Damage</option>
+<option>Phone Dead</option>
+<option>Other Repair</option>
+</select>
 
-    <div id="step2" class="step">
+<div class="buttons">
+<button class="btn back" onclick="previousStep(2)">
+← Back
+</button>
 
-      <h2>02. Service Selection</h2>
+<button class="btn next" onclick="nextStep(2)">
+Continue →
+</button>
+</div>
 
-      <p>
-        Select your phone and repair service.
-      </p>
+</div>
 
-      <label>Phone Brand</label>
+<div id="step3" class="step">
 
-      <select id="brand">
+<h2>03. Address & Location</h2>
+<p>Where should our technician visit?</p>
 
-        <option value="">
-          Select brand
-        </option>
+<label>Complete Address</label>
 
-        <option>Apple iPhone</option>
-        <option>Samsung</option>
-        <option>OnePlus</option>
-        <option>Vivo</option>
-        <option>Oppo</option>
-        <option>Realme</option>
-        <option>Redmi / Xiaomi</option>
-        <option>Motorola</option>
-        <option>Nothing</option>
-        <option>Other</option>
+<textarea id="address"
+placeholder="House / Flat, Street, Area, City"></textarea>
 
-      </select>
+<button class="location-btn" onclick="getLocation()">
+📍 Use My Current Location
+</button>
 
-      <label>Phone Model</label>
+<div id="locationStatus" class="location-status"></div>
 
-      <input
-        type="text"
-        id="model"
-        placeholder="Example: iPhone 13"
-      >
+<input type="hidden" id="location">
 
-      <label>Repair Service</label>
+<div class="buttons">
 
-      <select id="service">
+<button class="btn back" onclick="previousStep(3)">
+← Back
+</button>
 
-        <option value="">
-          Select service
-        </option>
-
-        <option>Screen Repair</option>
-        <option>Battery Replacement</option>
-        <option>Charging Issue</option>
-        <option>Speaker Repair</option>
-        <option>Camera Repair</option>
-        <option>Water Damage</option>
-        <option>Phone Dead</option>
-        <option>Other Repair</option>
+<button class="btn next" onclick="nextStep(3)">
+Continue →
+</button>
 
-      </select>
+</div>
 
-      <div class="buttons">
+</div>
 
-        <button
-          type="button"
-          class="btn back"
-          onclick="previousStep(2)"
-        >
-          ← Back
-        </button>
+<div id="step4" class="step">
 
-        <button
-          type="button"
-          class="btn next"
-          onclick="nextStep(2)"
-        >
-          Continue →
-        </button>
+<h2>04. Date & Time</h2>
+<p>Select your preferred doorstep visit.</p>
 
-      </div>
+<label>Preferred Date</label>
+<input type="date" id="bookingDate">
 
-    </div>
+<label>Preferred Time</label>
 
-    <!-- STEP 3 -->
+<select id="timeSlot">
+<option value="">Select time slot</option>
+<option>9 AM - 12 PM</option>
+<option>12 PM - 3 PM</option>
+<option>3 PM - 6 PM</option>
+<option>6 PM - 9 PM</option>
+</select>
 
-    <div id="step3" class="step">
+<div class="buttons">
 
-      <h2>03. Address & Location</h2>
-
-      <p>
-        Where should our technician visit?
-      </p>
+<button class="btn back" onclick="previousStep(4)">
+← Back
+</button>
 
-      <label>Complete Address</label>
+<button class="btn next" onclick="nextStep(4)">
+Review Booking →
+</button>
 
-      <textarea
-        id="address"
-        placeholder="House / Flat, Street, Area, City"
-      ></textarea>
+</div>
 
-      <button
-        type="button"
-        class="location-btn"
-        onclick="getLocation()"
-      >
-        📍 Use My Current Location
-      </button>
+</div>
 
-      <div
-        id="locationStatus"
-        class="location-status"
-      ></div>
+<div id="step5" class="step">
 
-      <input
-        type="hidden"
-        id="location"
-      >
+<h2>05. Confirm Booking</h2>
+<p>Please check your details before confirming.</p>
 
-      <div class="buttons">
+<div class="summary">
 
-        <button
-          type="button"
-          class="btn back"
-          onclick="previousStep(3)"
-        >
-          ← Back
-        </button>
+<div class="summary-row">
+<strong>Name</strong>
+<span id="summaryName"></span>
+</div>
 
-        <button
-          type="button"
-          class="btn next"
-          onclick="nextStep(3)"
-        >
-          Continue →
-        </button>
+<div class="summary-row">
+<strong>Mobile</strong>
+<span id="summaryMobile"></span>
+</div>
 
-      </div>
+<div class="summary-row">
+<strong>Phone</strong>
+<span id="summaryPhone"></span>
+</div>
 
-    </div>
+<div class="summary-row">
+<strong>Service</strong>
+<span id="summaryService"></span>
+</div>
 
-    <!-- STEP 4 -->
+<div class="summary-row">
+<strong>Address</strong>
+<span id="summaryAddress"></span>
+</div>
 
-    <div id="step4" class="step">
+<div class="summary-row">
+<strong>Date</strong>
+<span id="summaryDate"></span>
+</div>
 
-      <h2>04. Date & Time</h2>
+<div class="summary-row">
+<strong>Time</strong>
+<span id="summaryTime"></span>
+</div>
 
-      <p>
-        Select your preferred doorstep visit.
-      </p>
+</div>
 
-      <label>Preferred Date</label>
+<div class="buttons">
 
-      <input
-        type="date"
-        id="bookingDate"
-      >
+<button class="btn back" onclick="previousStep(5)">
+← Back
+</button>
 
-      <label>Preferred Time</label>
+<button class="btn confirm" onclick="confirmBooking()">
+✓ Confirm Booking
+</button>
 
-      <select id="timeSlot">
-
-        <option value="">
-          Select time slot
-        </option>
+</div>
 
-        <option>9 AM - 12 PM</option>
-        <option>12 PM - 3 PM</option>
-        <option>3 PM - 6 PM</option>
-        <option>6 PM - 9 PM</option>
+</div>
 
-      </select>
+<div id="success" class="success">
 
-      <div class="buttons">
+<div class="success-icon">✅</div>
 
-        <button
-          type="button"
-          class="btn back"
-          onclick="previousStep(4)"
-        >
-          ← Back
-        </button>
+<h2>Booking Confirmed!</h2>
 
-        <button
-          type="button"
-          class="btn next"
-          onclick="nextStep(4)"
-        >
-          Review Booking →
-        </button>
+<p>Your VISION doorstep repair request has been received.</p>
 
-      </div>
+<div id="generatedBookingId" class="booking-id">
+VIS-00000
+</div>
 
-    </div>
+<p>Save this Booking ID for tracking.</p>
 
-    <!-- STEP 5 -->
+<a id="whatsappLink"
+class="whatsapp-btn"
+href="#"
+target="_blank">
+📲 Send Booking to WhatsApp
+</a>
 
-    <div id="step5" class="step">
+</div>
 
-      <h2>05. Confirm Booking</h2>
-
-      <p>
-        Please check your details before confirming.
-      </p>
-
-      <div class="summary">
-
-        <div class="summary-row">
-          <strong>Name</strong>
-          <span id="summaryName"></span>
-        </div>
-
-        <div class="summary-row">
-          <strong>Mobile</strong>
-          <span id="summaryMobile"></span>
-        </div>
-
-        <div class="summary-row">
-          <strong>Phone</strong>
-          <span id="summaryPhone"></span>
-        </div>
-
-        <div class="summary-row">
-          <strong>Service</strong>
-          <span id="summaryService"></span>
-        </div>
-
-        <div class="summary-row">
-          <strong>Address</strong>
-          <span id="summaryAddress"></span>
-        </div>
-
-        <div class="summary-row">
-          <strong>Date</strong>
-          <span id="summaryDate"></span>
-        </div>
-
-        <div class="summary-row">
-          <strong>Time</strong>
-          <span id="summaryTime"></span>
-        </div>
-
-      </div>
-
-      <div class="buttons">
-
-        <button
-          type="button"
-          class="btn back"
-          onclick="previousStep(5)"
-        >
-          ← Back
-        </button>
-
-        <button
-          type="button"
-          class="btn confirm"
-          onclick="confirmBooking()"
-        >
-          ✓ Confirm Booking
-        </button>
-
-      </div>
-
-    </div>
-
-    <!-- SUCCESS -->
-
-    <div id="success" class="success">
-
-      <div class="success-icon">
-        ✅
-      </div>
-
-      <h2>
-        Booking Confirmed!
-      </h2>
-
-      <p>
-        Your VISION doorstep repair request has been received.
-      </p>
-
-      <div
-        id="generatedBookingId"
-        class="booking-id"
-      >
-        VIS-00000
-      </div>
-
-      <p>
-        Save this Booking ID for tracking.
-      </p>
-
-      <a
-        id="whatsappLink"
-        class="whatsapp-btn"
-        href="#"
-        target="_blank"
-      >
-        📲 Send Booking to WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
+</div>
 </section>
-
-<!-- TRACK -->
 
 <section id="track">
 
-  <h2 class="section-title">
-    Track Your Repair
-  </h2>
+<h2 class="section-title">Track Your Repair</h2>
 
-  <div class="track-box">
+<div class="track-box">
 
-    <p>
-      Enter your VISION Booking ID
-    </p>
+<p>Enter your VISION Booking ID</p>
 
-    <br>
+<input id="trackBookingId"
+placeholder="Example: VIS-12345">
 
-    <input
-      type="text"
-      id="trackBookingId"
-      placeholder="Example: VIS-12345"
-    >
+<button onclick="trackBooking()">
+🔎 Track Booking
+</button>
 
-    <button
-      type="button"
-      onclick="trackBooking()"
-    >
-      🔎 Track Booking
-    </button>
+<div id="trackResult"></div>
 
-    <div id="trackResult"></div>
-
-  </div>
-
+</div>
 </section>
-
-<!-- HOW -->
 
 <section>
 
-  <h2 class="section-title">
-    How VISION Works
-  </h2>
+<h2 class="section-title">How VISION Works</h2>
 
-  <div class="how">
+<div class="how">
 
-    <div class="how-card">
-      <span>01 — BOOK</span>
-      <h3>Book Repair</h3>
-      <p>
-        Select your phone and repair service.
-      </p>
-    </div>
+<div class="how-card">
+<span>01 — BOOK</span>
+<h3>Book Repair</h3>
+<p>Select your phone and repair service.</p>
+</div>
 
-    <div class="how-card">
-      <span>02 — ASSIGN</span>
-      <h3>Technician Assigned</h3>
-      <p>
-        Our team assigns a technician.
-      </p>
-    </div>
+<div class="how-card">
+<span>02 — ASSIGN</span>
+<h3>Technician Assigned</h3>
+<p>Our team assigns a technician.</p>
+</div>
 
-    <div class="how-card">
-      <span>03 — VISIT</span>
-      <h3>Doorstep Visit</h3>
-      <p>
-        Technician reaches your location.
-      </p>
-    </div>
+<div class="how-card">
+<span>03 — VISIT</span>
+<h3>Doorstep Visit</h3>
+<p>Technician reaches your location.</p>
+</div>
 
-    <div class="how-card">
-      <span>04 — REPAIR</span>
-      <h3>Get Repaired</h3>
-      <p>
-        Your phone is repaired at your doorstep.
-      </p>
-    </div>
+<div class="how-card">
+<span>04 — REPAIR</span>
+<h3>Get Repaired</h3>
+<p>Your phone is repaired at your doorstep.</p>
+</div>
 
-  </div>
-
+</div>
 </section>
 
 <footer>
 
-  <h2>VISION</h2>
+<h2>VISION</h2>
 
-  <p>
-    Doorstep Mobile Repair Service
-  </p>
+<p>Doorstep Mobile Repair Service</p>
 
-  <br>
+<br>
 
-  <p>
-    © 2026 VISION. All rights reserved.
-  </p>
+<p>© 2026 VISION. All rights reserved.</p>
 
 </footer>
 
 <script>
 
-/* =========================
-   SETTINGS
-========================= */
-
 const WHATSAPP_NUMBER = "916309877224";
 
 let currentStep = 1;
 
-
-/* =========================
-   DATE
-========================= */
-
 const dateInput =
-  document.getElementById("bookingDate");
+document.getElementById("bookingDate");
 
 const today = new Date();
 
-const year =
-  today.getFullYear();
-
-const month =
-  String(today.getMonth() + 1).padStart(2,"0");
-
-const day =
-  String(today.getDate()).padStart(2,"0");
-
 dateInput.min =
-  year + "-" + month + "-" + day;
+today.getFullYear() + "-" +
+String(today.getMonth()+1).padStart(2,"0") + "-" +
+String(today.getDate()).padStart(2,"0");
 
-
-/* =========================
-   SHOW STEP
-========================= */
 
 function showStep(step){
 
-  document
-    .querySelectorAll(".step")
-    .forEach(function(item){
+document.querySelectorAll(".step").forEach(function(item){
+item.classList.remove("active");
+});
 
-      item.classList.remove("active");
+document.getElementById("step"+step)
+.classList.add("active");
 
-    });
+for(let i=1;i<=5;i++){
 
-  const selected =
-    document.getElementById("step" + step);
+const p=document.getElementById("p"+i);
 
-  if(selected){
-    selected.classList.add("active");
-  }
-
-  for(let i = 1; i <= 5; i++){
-
-    const progress =
-      document.getElementById("p" + i);
-
-    if(i <= step){
-      progress.classList.add("active");
-    }else{
-      progress.classList.remove("active");
-    }
-
-  }
-
-  currentStep = step;
-
-  document
-    .getElementById("book")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+if(i<=step){
+p.classList.add("active");
+}else{
+p.classList.remove("active");
 }
 
+}
 
-/* =========================
-   NEXT STEP
-========================= */
+currentStep=step;
+
+document.getElementById("book")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
 
 function nextStep(step){
 
-  if(step === 1){
+if(step===1){
 
-    const name =
-      document
-        .getElementById("name")
-        .value
-        .trim();
+const name=document.getElementById("name").value.trim();
+const mobile=document.getElementById("mobile").value.trim();
 
-    const mobile =
-      document
-        .getElementById("mobile")
-        .value
-        .trim();
-
-    if(name === ""){
-      alert("Please enter your name.");
-      return;
-    }
-
-    if(!/^[0-9]{10}$/.test(mobile)){
-      alert(
-        "Please enter a valid 10 digit mobile number."
-      );
-      return;
-    }
-
-  }
-
-
-  if(step === 2){
-
-    const brand =
-      document
-        .getElementById("brand")
-        .value;
-
-    const model =
-      document
-        .getElementById("model")
-        .value
-        .trim();
-
-    const service =
-      document
-        .getElementById("service")
-        .value;
-
-    if(brand === ""){
-      alert("Please select your phone brand.");
-      return;
-    }
-
-    if(model === ""){
-      alert("Please enter your phone model.");
-      return;
-    }
-
-    if(service === ""){
-      alert("Please select repair service.");
-      return;
-    }
-
-  }
-
-
-  if(step === 3){
-
-    const address =
-      document
-        .getElementById("address")
-        .value
-        .trim();
-
-    if(address === ""){
-      alert("Please enter your service address.");
-      return;
-    }
-
-  }
-
-
-  if(step === 4){
-
-    const date =
-      document
-        .getElementById("bookingDate")
-        .value;
-
-    const time =
-      document
-        .getElementById("timeSlot")
-        .value;
-
-    if(date === ""){
-      alert("Please select a booking date.");
-      return;
-    }
-
-    if(time === ""){
-      alert("Please select a time slot.");
-      return;
-    }
-
-    updateSummary();
-
-  }
-
-
-  showStep(step + 1);
+if(name===""){
+alert("Please enter your name.");
+return;
 }
 
+if(!/^[0-9]{10}$/.test(mobile)){
+alert("Please enter a valid 10 digit mobile number.");
+return;
+}
 
-/* =========================
-   PREVIOUS
-========================= */
+}
+
+if(step===2){
+
+if(document.getElementById("brand").value===""){
+alert("Please select your phone brand.");
+return;
+}
+
+if(document.getElementById("model").value.trim()===""){
+alert("Please enter your phone model.");
+return;
+}
+
+if(document.getElementById("service").value===""){
+alert("Please select repair service.");
+return;
+}
+
+}
+
+if(step===3){
+
+if(document.getElementById("address").value.trim()===""){
+alert("Please enter your service address.");
+return;
+}
+
+}
+
+if(step===4){
+
+if(document.getElementById("bookingDate").value===""){
+alert("Please select a booking date.");
+return;
+}
+
+if(document.getElementById("timeSlot").value===""){
+alert("Please select a time slot.");
+return;
+}
+
+updateSummary();
+
+}
+
+showStep(step+1);
+
+}
+
 
 function previousStep(step){
 
-  if(step > 1){
-    showStep(step - 1);
-  }
+if(step>1){
+showStep(step-1);
+}
 
 }
 
-
-/* =========================
-   SUMMARY
-========================= */
 
 function updateSummary(){
 
-  const name =
-    document.getElementById("name").value;
+document.getElementById("summaryName").innerText =
+document.getElementById("name").value;
 
-  const mobile =
-    document.getElementById("mobile").value;
+document.getElementById("summaryMobile").innerText =
+document.getElementById("mobile").value;
 
-  const brand =
-    document.getElementById("brand").value;
+document.getElementById("summaryPhone").innerText =
+document.getElementById("brand").value +
+" - " +
+document.getElementById("model").value;
 
-  const model =
-    document.getElementById("model").value;
+document.getElementById("summaryService").innerText =
+document.getElementById("service").value;
 
-  const service =
-    document.getElementById("service").value;
+document.getElementById("summaryAddress").innerText =
+document.getElementById("address").value;
 
-  const address =
-    document.getElementById("address").value;
+document.getElementById("summaryDate").innerText =
+document.getElementById("bookingDate").value;
 
-  const date =
-    document.getElementById("bookingDate").value;
-
-  const time =
-    document.getElementById("timeSlot").value;
-
-
-  document.getElementById("summaryName")
-    .innerText = name;
-
-  document.getElementById("summaryMobile")
-    .innerText = mobile;
-
-  document.getElementById("summaryPhone")
-    .innerText = brand + " - " + model;
-
-  document.getElementById("summaryService")
-    .innerText = service;
-
-  document.getElementById("summaryAddress")
-    .innerText = address;
-
-  document.getElementById("summaryDate")
-    .innerText = date;
-
-  document.getElementById("summaryTime")
-    .innerText = time;
+document.getElementById("summaryTime").innerText =
+document.getElementById("timeSlot").value;
 
 }
 
-
-/* =========================
-   LOCATION
-========================= */
 
 function getLocation(){
 
-  const status =
-    document.getElementById("locationStatus");
+const status=document.getElementById("locationStatus");
 
-  if(!navigator.geolocation){
+if(!navigator.geolocation){
 
-    status.innerText =
-      "Location is not supported.";
+status.innerText="Location is not supported.";
+return;
 
-    return;
-  }
+}
 
-  status.innerText =
-    "Getting your location...";
+status.innerText="Getting your location...";
 
+navigator.geolocation.getCurrentPosition(
 
-  navigator.geolocation.getCurrentPosition(
+function(position){
 
-    function(position){
+const location =
+position.coords.latitude + "," +
+position.coords.longitude;
 
-      const latitude =
-        position.coords.latitude;
+document.getElementById("location").value=location;
 
-      const longitude =
-        position.coords.longitude;
+status.innerText="✓ Location captured successfully.";
 
-      const coordinates =
-        latitude + "," + longitude;
+},
 
-      document
-        .getElementById("location")
-        .value = coordinates;
+function(){
 
-      status.innerText =
-        "✓ Location captured successfully.";
+status.innerText =
+"Unable to get location. Please enter address manually.";
 
-    },
+}
 
-    function(){
-
-      status.innerText =
-        "Unable to get location. Please enter address manually.";
-
-    }
-
-  );
+);
 
 }
 
 
-/* =========================
-   CONFIRM BOOKING
-========================= */
+/*
+=================================================
+SUPABASE CONNECTION
+=================================================
 
-function confirmBooking(){
+IMPORTANT:
+Ippudu ee 2 values ni mana already-used
+Supabase values tho replace cheyyali.
 
-  const bookingId =
-    "VIS-" +
-    Math.floor(
-      10000 + Math.random() * 90000
-    );
+SUPABASE_URL
+SUPABASE_ANON_KEY
 
-  const name =
-    document.getElementById("name").value;
+=================================================
+*/
 
-  const mobile =
-    document.getElementById("mobile").value;
+const SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL_HERE";
 
-  const brand =
-    document.getElementById("brand").value;
-
-  const model =
-    document.getElementById("model").value;
-
-  const service =
-    document.getElementById("service").value;
-
-  const address =
-    document.getElementById("address").value;
-
-  const date =
-    document.getElementById("bookingDate").value;
-
-  const time =
-    document.getElementById("timeSlot").value;
-
-  const location =
-    document.getElementById("location").value;
+const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_KEY_HERE";
 
 
-  const booking = {
+async function saveBooking(booking){
 
-    id:bookingId,
+if(
+SUPABASE_URL.includes("PASTE_") ||
+SUPABASE_ANON_KEY.includes("PASTE_")
+){
 
-    name:name,
+console.log("Supabase credentials not added yet.");
+return false;
 
-    mobile:mobile,
+}
 
-    brand:brand,
+try{
 
-    model:model,
+const response=await fetch(
+SUPABASE_URL + "/rest/v1/bookings",
+{
 
-    service:service,
+method:"POST",
 
-    address:address,
+headers:{
+"Content-Type":"application/json",
+"apikey":SUPABASE_ANON_KEY,
+"Authorization":"Bearer " + SUPABASE_ANON_KEY,
+"Prefer":"return=representation"
+},
 
-    date:date,
+body:JSON.stringify(booking)
 
-    time:time,
+});
 
-    location:location
+if(!response.ok){
 
-  };
+console.error(await response.text());
+return false;
 
+}
 
-  localStorage.setItem(
-    "vision_" + bookingId,
-    JSON.stringify(booking)
-  );
+return true;
 
+}catch(error){
 
-  document
-    .getElementById("generatedBookingId")
-    .innerText = bookingId;
+console.error(error);
+return false;
 
-
-  const whatsappMessage =
-    "🔧 VISION MOBILE REPAIR BOOKING\n\n" +
-    "Booking ID: " + bookingId + "\n" +
-    "Name: " + name + "\n" +
-    "Mobile: " + mobile + "\n" +
-    "Phone: " + brand + " - " + model + "\n" +
-    "Service: " + service + "\n" +
-    "Address: " + address + "\n" +
-    "Date: " + date + "\n" +
-    "Time: " + time +
-    (location
-      ? "\nLocation: https://maps.google.com/?q=" + location
-      : "");
-
-
-  const whatsappURL =
-    "https://wa.me/" +
-    WHATSAPP_NUMBER +
-    "?text=" +
-    encodeURIComponent(
-      whatsappMessage
-    );
-
-
-  document
-    .getElementById("whatsappLink")
-    .href = whatsappURL;
-
-
-  document
-    .querySelectorAll(".step")
-    .forEach(function(item){
-      item.classList.remove("active");
-    });
-
-
-  document
-    .getElementById("success")
-    .classList.add("active");
-
-
-  for(let i = 1; i <= 5; i++){
-
-    document
-      .getElementById("p" + i)
-      .classList.add("active");
-
-  }
+}
 
 }
 
 
-/* =========================
-   TRACK BOOKING
-========================= */
+async function confirmBooking(){
 
-function trackBooking(){
+const bookingId =
+"VIS-" +
+Math.floor(10000 + Math.random()*90000);
 
-  const id =
-    document
-      .getElementById("trackBookingId")
-      .value
-      .trim()
-      .toUpperCase();
+const booking={
 
-  const result =
-    document.getElementById("trackResult");
+id:bookingId,
 
+name:document.getElementById("name").value.trim(),
 
-  if(id === ""){
+mobile:document.getElementById("mobile").value.trim(),
 
-    result.innerText =
-      "Please enter your Booking ID.";
+brand:document.getElementById("brand").value,
 
-    return;
-  }
+model:document.getElementById("model").value.trim(),
 
+service:document.getElementById("service").value,
 
-  const saved =
-    localStorage.getItem(
-      "vision_" + id
-    );
+address:document.getElementById("address").value.trim(),
 
+date:document.getElementById("bookingDate").value,
 
-  if(!saved){
+time:document.getElementById("timeSlot").value,
 
-    result.innerText =
-      "Booking not found on this device.";
+location:document.getElementById("location").value,
 
-    result.style.color =
-      "#dc2626";
+status:"Pending"
 
-    return;
-  }
+};
 
 
-  const booking =
-    JSON.parse(saved);
+const button=document.querySelector(".confirm");
+
+button.disabled=true;
+button.innerText="Saving...";
 
 
-  result.style.color =
-    "#16a34a";
+const saved=await saveBooking(booking);
 
-  result.innerHTML =
-    "✓ Booking Found<br><br>" +
-    "Customer: " +
-    booking.name +
-    "<br>" +
-    "Service: " +
-    booking.service +
-    "<br>" +
-    "Date: " +
-    booking.date +
-    "<br>" +
-    "Time: " +
-    booking.time;
+if(!saved){
+
+button.disabled=false;
+button.innerText="✓ Confirm Booking";
+
+alert(
+"Booking save avvaledu. Supabase connection check cheyyali."
+);
+
+return;
 
 }
 
 
-/* =========================
-   FINISH
-========================= */
+document.getElementById("step5")
+.classList.remove("active");
+
+document.getElementById("generatedBookingId")
+.innerText=bookingId;
+
+const message=
+
+"VISION MOBILE REPAIR BOOKING%0A%0A"+
+
+"Booking ID: "+bookingId+"%0A"+
+"Name: "+booking.name+"%0A"+
+"Mobile: "+booking.mobile+"%0A"+
+"Phone: "+booking.brand+" - "+booking.model+"%0A"+
+"Service: "+booking.service+"%0A"+
+"Address: "+booking.address+"%0A"+
+"Date: "+booking.date+"%0A"+
+"Time: "+booking.time;
+
+document.getElementById("whatsappLink").href =
+"https://wa.me/"+WHATSAPP_NUMBER+
+"?text="+message;
+
+document.getElementById("success")
+.classList.add("active");
+
+document.getElementById("success")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+
+async function trackBooking(){
+
+const id=document
+.getElementById("trackBookingId")
+.value.trim();
+
+const result=document
+.getElementById("trackResult");
+
+if(id===""){
+
+result.innerHTML="Please enter Booking ID.";
+return;
+
+}
+
+if(
+SUPABASE_URL.includes("PASTE_") ||
+SUPABASE_ANON_KEY.includes("PASTE_")
+){
+
+result.innerHTML="Supabase connection not configured.";
+return;
+
+}
+
+result.innerHTML="Searching...";
+
+try{
+
+const response=await fetch(
+
+SUPABASE_URL+
+"/rest/v1/bookings?id=eq."+
+encodeURIComponent(id)+
+"&select=*",
+
+{
+
+headers:{
+"apikey":SUPABASE_ANON_KEY,
+"Authorization":"Bearer "+SUPABASE_ANON_KEY
+}
+
+}
+
+);
+
+if(!response.ok){
+
+result.innerHTML="Unable to check booking.";
+return;
+
+}
+
+const data=await response.json();
+
+if(data.length===0){
+
+result.innerHTML="❌ Booking not found.";
+return;
+
+}
+
+const booking=data[0];
+
+result.innerHTML=
+
+"✓ Booking Found<br><br>"+
+"Customer: "+booking.name+
+"<br>"+
+"Service: "+booking.service+
+"<br>"+
+"Date: "+booking.date+
+"<br>"+
+"Time: "+booking.time+
+"<br>"+
+"Status: "+(booking.status || "Pending");
+
+}catch(error){
+
+console.error(error);
+
+result.innerHTML=
+"Something went wrong. Please try again.";
+
+}
+
+}
 
 </script>
 
